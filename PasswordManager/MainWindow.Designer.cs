@@ -31,9 +31,13 @@ namespace PasswordManager
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.SideMenuPanel = new System.Windows.Forms.Panel();
-            this.panelSubLogins = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panelSubSecureNotes = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.buttonSecureNotes = new System.Windows.Forms.Button();
+            this.panelSubLogins = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonLogins = new System.Windows.Forms.Button();
             this.panelSubPersonalInformation = new System.Windows.Forms.Panel();
             this.buttonPersonalInformationAdd = new System.Windows.Forms.Button();
@@ -42,16 +46,12 @@ namespace PasswordManager
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelMove = new System.Windows.Forms.Panel();
-            this.buttonSecureNotes = new System.Windows.Forms.Button();
-            this.panelSubSecureNotes = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.SideMenuPanel.SuspendLayout();
+            this.panelSubSecureNotes.SuspendLayout();
             this.panelSubLogins.SuspendLayout();
             this.panelSubPersonalInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMove.SuspendLayout();
-            this.panelSubSecureNotes.SuspendLayout();
             this.SuspendLayout();
             // 
             // SideMenuPanel
@@ -70,6 +70,65 @@ namespace PasswordManager
             this.SideMenuPanel.Size = new System.Drawing.Size(150, 550);
             this.SideMenuPanel.TabIndex = 0;
             // 
+            // panelSubSecureNotes
+            // 
+            this.panelSubSecureNotes.BackColor = System.Drawing.Color.DimGray;
+            this.panelSubSecureNotes.Controls.Add(this.button4);
+            this.panelSubSecureNotes.Controls.Add(this.button2);
+            this.panelSubSecureNotes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubSecureNotes.Location = new System.Drawing.Point(0, 210);
+            this.panelSubSecureNotes.Name = "panelSubSecureNotes";
+            this.panelSubSecureNotes.Size = new System.Drawing.Size(150, 60);
+            this.panelSubSecureNotes.TabIndex = 9;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button4.Location = new System.Drawing.Point(0, 30);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(150, 30);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Remove";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(150, 30);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Add";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // buttonSecureNotes
+            // 
+            this.buttonSecureNotes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonSecureNotes.FlatAppearance.BorderSize = 0;
+            this.buttonSecureNotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSecureNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.buttonSecureNotes.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonSecureNotes.Location = new System.Drawing.Point(0, 180);
+            this.buttonSecureNotes.Name = "buttonSecureNotes";
+            this.buttonSecureNotes.Size = new System.Drawing.Size(150, 30);
+            this.buttonSecureNotes.TabIndex = 9;
+            this.buttonSecureNotes.Text = "Secure Notes";
+            this.buttonSecureNotes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSecureNotes.UseVisualStyleBackColor = true;
+            this.buttonSecureNotes.Click += new System.EventHandler(this.buttonSecureNotes_Click);
+            // 
             // panelSubLogins
             // 
             this.panelSubLogins.BackColor = System.Drawing.Color.DimGray;
@@ -81,12 +140,28 @@ namespace PasswordManager
             this.panelSubLogins.Size = new System.Drawing.Size(150, 60);
             this.panelSubLogins.TabIndex = 8;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(150, 30);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Add";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Location = new System.Drawing.Point(0, 30);
             this.button1.Name = "button1";
@@ -97,28 +172,12 @@ namespace PasswordManager
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(150, 30);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Add";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // buttonLogins
             // 
             this.buttonLogins.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonLogins.FlatAppearance.BorderSize = 0;
             this.buttonLogins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogins.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonLogins.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.buttonLogins.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonLogins.Location = new System.Drawing.Point(0, 90);
             this.buttonLogins.Name = "buttonLogins";
@@ -145,7 +204,7 @@ namespace PasswordManager
             this.buttonPersonalInformationAdd.BackColor = System.Drawing.Color.Transparent;
             this.buttonPersonalInformationAdd.FlatAppearance.BorderSize = 0;
             this.buttonPersonalInformationAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPersonalInformationAdd.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonPersonalInformationAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.buttonPersonalInformationAdd.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonPersonalInformationAdd.Location = new System.Drawing.Point(0, 0);
             this.buttonPersonalInformationAdd.Name = "buttonPersonalInformationAdd";
@@ -155,13 +214,14 @@ namespace PasswordManager
             this.buttonPersonalInformationAdd.Text = "Add";
             this.buttonPersonalInformationAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPersonalInformationAdd.UseVisualStyleBackColor = false;
+            this.buttonPersonalInformationAdd.Click += new System.EventHandler(this.buttonPersonalInformationAdd_Click);
             // 
             // buttonPersonalInformationRemove
             // 
             this.buttonPersonalInformationRemove.BackColor = System.Drawing.Color.Transparent;
             this.buttonPersonalInformationRemove.FlatAppearance.BorderSize = 0;
             this.buttonPersonalInformationRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPersonalInformationRemove.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonPersonalInformationRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.buttonPersonalInformationRemove.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonPersonalInformationRemove.Location = new System.Drawing.Point(0, 30);
             this.buttonPersonalInformationRemove.Name = "buttonPersonalInformationRemove";
@@ -177,7 +237,7 @@ namespace PasswordManager
             this.buttonPersonalInformation.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonPersonalInformation.FlatAppearance.BorderSize = 0;
             this.buttonPersonalInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPersonalInformation.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonPersonalInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.buttonPersonalInformation.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonPersonalInformation.Location = new System.Drawing.Point(0, 0);
             this.buttonPersonalInformation.Name = "buttonPersonalInformation";
@@ -200,7 +260,7 @@ namespace PasswordManager
             // 
             // panelChildForm
             // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panelChildForm.Location = new System.Drawing.Point(150, 50);
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(930, 550);
@@ -219,65 +279,6 @@ namespace PasswordManager
             this.panelMove.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMove_MouseMove);
             this.panelMove.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelMove_MouseUp);
             // 
-            // buttonSecureNotes
-            // 
-            this.buttonSecureNotes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSecureNotes.FlatAppearance.BorderSize = 0;
-            this.buttonSecureNotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSecureNotes.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSecureNotes.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonSecureNotes.Location = new System.Drawing.Point(0, 180);
-            this.buttonSecureNotes.Name = "buttonSecureNotes";
-            this.buttonSecureNotes.Size = new System.Drawing.Size(150, 30);
-            this.buttonSecureNotes.TabIndex = 9;
-            this.buttonSecureNotes.Text = "Secure Notes";
-            this.buttonSecureNotes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSecureNotes.UseVisualStyleBackColor = true;
-            this.buttonSecureNotes.Click += new System.EventHandler(this.buttonSecureNotes_Click);
-            // 
-            // panelSubSecureNotes
-            // 
-            this.panelSubSecureNotes.BackColor = System.Drawing.Color.DimGray;
-            this.panelSubSecureNotes.Controls.Add(this.button4);
-            this.panelSubSecureNotes.Controls.Add(this.button2);
-            this.panelSubSecureNotes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubSecureNotes.Location = new System.Drawing.Point(0, 210);
-            this.panelSubSecureNotes.Name = "panelSubSecureNotes";
-            this.panelSubSecureNotes.Size = new System.Drawing.Size(150, 60);
-            this.panelSubSecureNotes.TabIndex = 9;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(0, 30);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(150, 30);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Remove";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(150, 30);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Add";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,11 +293,11 @@ namespace PasswordManager
             this.Name = "MainWindow";
             this.Text = "Form1";
             this.SideMenuPanel.ResumeLayout(false);
+            this.panelSubSecureNotes.ResumeLayout(false);
             this.panelSubLogins.ResumeLayout(false);
             this.panelSubPersonalInformation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMove.ResumeLayout(false);
-            this.panelSubSecureNotes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

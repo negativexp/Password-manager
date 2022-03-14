@@ -91,5 +91,10 @@ namespace PasswordManager
         {
             showSubMenu(panelSubSecureNotes);
         }
+
+        private void buttonPersonalInformationAdd_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PersonalInformationAddForm());
+        }
     }
 }
