@@ -1,0 +1,81 @@
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\bin\Debug\PWDMNG.exe.config
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\bin\Debug\PWDMNG.exe
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\bin\Debug\PWDMNG.pdb
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.csproj.AssemblyReference.cache
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.csproj.SuggestedBindingRedirects.cache
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.Properties.Resources.resources
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.csproj.GenerateResource.cache
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.csproj.CoreCompileInputs.cache
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.exe
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.pdb
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\bin\Debug\Newtonsoft.Json.dll
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\bin\Debug\Newtonsoft.Json.xml
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.Views.Login.resources
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.csproj.CopyComplete
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.MainWindow.resources
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.Views.Register.resources
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\bin\Debug\MetroSet UI.dll
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.Add.resources
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.Main.resources
+C:\Users\matyas.schuller\source\repos\PWDMNG\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.View.resources
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\bin\Debug\PWDMNG.exe.config
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\bin\Debug\PWDMNG.exe
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\bin\Debug\PWDMNG.pdb
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\bin\Debug\MetroSet UI.dll
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\bin\Debug\Newtonsoft.Json.dll
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\bin\Debug\Newtonsoft.Json.xml
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.csproj.AssemblyReference.cache
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.csproj.SuggestedBindingRedirects.cache
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.Views.Login.resources
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.MainWindow.resources
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.Properties.Resources.resources
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.Add.resources
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.Main.resources
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.View.resources
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.Views.Register.resources
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.csproj.GenerateResource.cache
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.csproj.CoreCompileInputs.cache
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.csproj.CopyComplete
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.exe
+C:\Users\matyas.schuller\source\repos\[GITHUB]\PWDMNG\PWDMNG\obj\Debug\PWDMNG.pdb
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\bin\Debug\PWDMNG.exe.config
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\bin\Debug\PWDMNG.exe
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\bin\Debug\PWDMNG.pdb
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\bin\Debug\MetroSet UI.dll
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\bin\Debug\Newtonsoft.Json.dll
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\bin\Debug\Newtonsoft.Json.xml
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.csproj.AssemblyReference.cache
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Views.Login.resources
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.MainWindow.resources
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Properties.Resources.resources
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.Add.resources
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.Main.resources
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.View.resources
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Views.Register.resources
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.csproj.GenerateResource.cache
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.csproj.CoreCompileInputs.cache
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.csproj.CopyComplete
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.exe
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.pdb
+C:\Users\matta\source\repos\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.Remove.resources
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\bin\Debug\PWDMNG.exe.config
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\bin\Debug\PWDMNG.exe
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\bin\Debug\PWDMNG.pdb
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\bin\Debug\MetroSet UI.dll
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\bin\Debug\Newtonsoft.Json.dll
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\bin\Debug\Newtonsoft.Json.xml
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.csproj.AssemblyReference.cache
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.csproj.SuggestedBindingRedirects.cache
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Views.Login.resources
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.MainWindow.resources
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Properties.Resources.resources
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.Add.resources
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.Main.resources
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.Remove.resources
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Views.PersonalInformation.View.resources
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.Views.Register.resources
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.csproj.GenerateResource.cache
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.csproj.CoreCompileInputs.cache
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.csproj.CopyComplete
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.exe
+C:\Users\matta\source\repos\[WORKING ON RN]\manager 22.03\Password-manager-main\PWDMNG\obj\Debug\PWDMNG.pdb

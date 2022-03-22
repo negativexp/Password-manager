@@ -1,0 +1,71 @@
+﻿<Page x:Class="passwordmanager.Views.Personal_Information.Add"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:passwordmanager.Views.Personal_Information"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="650"
+      Title="Add">
+    <Page.Resources>
+        <Style x:Key="MyWaterMarkStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <Border Background="White" BorderBrush="#FF7D8683" BorderThickness="1"/>
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="5,0,0,0" VerticalAlignment="Center" />
+                            <Label Margin="5,0,0,0" x:Name="WaterMarkLabel" Content="{TemplateBinding Tag}" VerticalAlignment="Center"
+                               Visibility="Collapsed" Foreground="Gray" FontFamily="Arial"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Text" Value=""/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Visibility" TargetName="WaterMarkLabel" Value="Visible"/>
+                            </MultiTrigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="DimGray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid Width="650" Height="40" VerticalAlignment="Bottom">
+            <Button Name="ButtonCreate" Content="Create" Width="75" Height="25" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" Margin="0, 0, 90, 0" Click="ButtonCreate_Click"/>
+            <Button Name="ButtonCancel" Content="Cancel" Width="75" Height="25" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" Margin="0, 0, 10, 0" Click="ButtonCancel_Click"/>
+        </Grid>
+        <Grid Background="#D1D5DE" Height="510" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Name="TextBoxTitle" Height="30" Width="630" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Title"/>
+            <TextBox Name="TextBoxFullName" Height="30" Width="630" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Full Name"/>
+            <TextBox Name="TextBoxEmail" Height="30" Width="630" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Email"/>
+            <TextBox Name="TextBoxPhone" Height="30" Width="630" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Phone"/>
+            <TextBox Name="TextBoxAddressLine1" Height="30" Width="630" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Address Line 1"/>
+            <TextBox Name="TextBoxAddressLine2" Height="30" Width="630" Grid.Row="5" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Address Line 2"/>
+            <TextBox Name="TextBoxCity" Height="30" Width="305" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10, 0, 0, 0" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="City"/>
+            <TextBox Name="TextBoxPostalCode" Height="30" Width="305" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10, 0, 0, 0" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="ZIP or Postal Code"/>
+            <TextBox Name="TextBoxStateOrProvince" Height="30" Width="305" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10, 0, 0, 0" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="State or Province"/>
+            <TextBox Name="TextBoxCountryOrRegion" Height="30" Width="305" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10, 0, 0, 0" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Country or Region"/>
+        </Grid>
+    </Grid>
+</Page>
