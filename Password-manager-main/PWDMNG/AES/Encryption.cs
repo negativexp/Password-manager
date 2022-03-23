@@ -2,6 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms;
 
 namespace PWDMNG.AES
 {
@@ -43,12 +44,11 @@ namespace PWDMNG.AES
             cs.Close();
             fsCrypt.Close();
         }
-        public static void EncryptV2(string json, string outputFile, byte[] passwordBytes)
+        public static void EncryptV2(string json, string outputFile, byte[] passwordBytes, string title)
         {
+            MessageBox.Show(json);
             byte[] saltBytes = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8 };
             string cryptFile = outputFile;
-            // Convert our plaintext into a byte array.
-            byte[] plainTextBytes = Encoding.UTF8.GetBytes(json);
 
             RijndaelManaged _AES = new RijndaelManaged();
             _AES.KeySize = 256;
@@ -59,36 +59,15 @@ namespace PWDMNG.AES
             _AES.IV = key.GetBytes(_AES.BlockSize / 8);
             _AES.Mode = CipherMode.CBC;
 
-            ICryptoTransform encryptor = _AES.CreateEncryptor();
+            MemoryStream mstream = new MemoryStream();
+            CryptoStream cstream = new CryptoStream(mstream, _AES.CreateEncryptor(), CryptoStreamMode.Write);
 
-            // Define memory stream which will be used to hold encrypted data.
-            MemoryStream memoryStream = new MemoryStream();
+            cstream.Write(Encoding.UTF8.GetBytes(json), 0, Encoding.UTF8.GetBytes(json).Length);
+            cstream.FlushFinalBlock();
+            byte[] enc = mstream.ToArray();
 
-            // Define cryptographic stream (always use Write mode for encryption).
-            CryptoStream cryptoStream = new CryptoStream
-            (
-                memoryStream,
-                encryptor,
-                CryptoStreamMode.Write
-            );
 
-            // Start encrypting.
-            cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
-
-            // Finish encrypting.
-            cryptoStream.FlushFinalBlock();
-
-            // Convert our encrypted data from a memory stream into a byte array.
-            byte[] cipherTextBytes = memoryStream.ToArray();
-
-            // Close both streams.
-            memoryStream.Close();
-            cryptoStream.Close();
-
-            // Convert encrypted data into a base64-encoded string.
-            FileStream fsCrypt = new FileStream(cryptFile, FileMode.Create);
-            Stream crypt = new MemoryStream(cipherTextBytes)
-
+            File.WriteAllBytes(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\" + title + ".json.AES", enc);
         }
     }
 }

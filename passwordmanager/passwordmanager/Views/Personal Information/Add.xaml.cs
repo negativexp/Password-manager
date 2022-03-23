@@ -34,7 +34,17 @@ namespace passwordmanager.Views.Personal_Information
 
         private void ButtonCreate_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                JSON.JSONcreate.PersonalInformation.Create(TextBoxTitle.Text, TextBoxFullName.Text, TextBoxEmail.Text, TextBoxPhone.Text,
+                                                                TextBoxAddressLine1.Text, TextBoxAddressLine2.Text, TextBoxCity.Text, TextBoxPostalCode.Text,
+                                                                TextBoxStateOrProvince.Text, TextBoxCountryOrRegion.Text);
+                _mw.UpdateFrameContent("/Views/Personal Information/Main.xaml");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong!","ERROR!");
+            }
         }
     }
 }

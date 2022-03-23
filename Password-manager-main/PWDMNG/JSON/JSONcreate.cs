@@ -68,7 +68,7 @@ namespace PWDMNG.JSON
                 {
                     if(!File.Exists(path))
                     {
-                        AES.Encryption.EncryptV2(JsonConvert.SerializeObject(_JSONDATA),
+                        AES.Encryption.Encrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json.AES",
                             AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\" + title + ".json.AES", Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
                     }
                     else
