@@ -29,7 +29,7 @@ namespace passwordmanager.Views.Personal_Information
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
-            _mw.UpdateFrameContent("/Views/Personal Information/Main.xaml");
+            _mw.UpdateFrameContent("/Views/Personal Information/Main.xaml", "");
         }
 
         private void ButtonCreate_Click(object sender, RoutedEventArgs e)
@@ -39,11 +39,12 @@ namespace passwordmanager.Views.Personal_Information
                 JSON.JSONcreate.PersonalInformation.Create(TextBoxTitle.Text, TextBoxFullName.Text, TextBoxEmail.Text, TextBoxPhone.Text,
                                                                 TextBoxAddressLine1.Text, TextBoxAddressLine2.Text, TextBoxCity.Text, TextBoxPostalCode.Text,
                                                                 TextBoxStateOrProvince.Text, TextBoxCountryOrRegion.Text);
-                _mw.UpdateFrameContent("/Views/Personal Information/Main.xaml");
+                _mw.UpdateFrameContent("/Views/Personal Information/Main.xaml", "");
+                MessageBox.Show("Data has been created!","Success!");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong!","ERROR!");
+                MessageBox.Show("Something went wrong! " + ex.ToString(),"ERROR!");
             }
         }
     }

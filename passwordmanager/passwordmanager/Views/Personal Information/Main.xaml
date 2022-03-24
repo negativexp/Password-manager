@@ -6,13 +6,13 @@
       xmlns:local="clr-namespace:passwordmanager.Views.Personal_Information"
       xmlns:Configuration="clr-namespace:System.Configuration;assembly=System" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="passwordmanager.Views.Personal_Information.Main"
       mc:Ignorable="d" 
-      d:DesignHeight="550" d:DesignWidth="650"
+      d:DesignHeight="565" d:DesignWidth="645"
       Title="Main"
       Loaded="Main_Loaded">
 
     <Grid>
         <Frame x:Name="FrameContent" VerticalAlignment="Bottom" HorizontalAlignment="Center" NavigationUIVisibility="Hidden"/>
-            <ListBox x:Name="ListBoxPersonal" BorderThickness="0" Width="650" Height="510" VerticalAlignment="Top" Background="#D1D5DE" MouseDoubleClick="FileListBox_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <ListBox x:Name="ListBoxPersonal" BorderThickness="0" Width="650" Height="510" VerticalAlignment="Bottom" Background="#D1D5DE" Margin="0, 0, 0, 40" MouseDoubleClick="ListBoxPersonal_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="FontSize" Value="14"/>
@@ -24,20 +24,22 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid VerticalAlignment="Center" Width="640" Height="40">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="30"/>
-                            <ColumnDefinition Width="610"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="/Images/icon.png" Grid.Column="0"/>
-                        <TextBlock Text="{Binding text}" Grid.Column="1" HorizontalAlignment="Center" Margin="10"/>
+                        <!--<Image Source="/Images/icon.png" Grid.Column="0"/>-->
+                        <TextBlock Text="{Binding text}" HorizontalAlignment="Left" Margin="10"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
             <Grid Height="100" Width="100"/>
         </ListBox>
-        <Grid Width="650" Height="40" VerticalAlignment="Bottom">
+        <Grid Height="40" VerticalAlignment="Top" Margin="0,525,0,0">
             <Button Name="ButtonAdd" Content="Add" Width="75" Height="25" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" Margin="0, 0, 90, 0" Click="ButtonAdd_Click"/>
             <Button Name="ButtonDelete" Content="Delete" Width="75" Height="25" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" Margin="0, 0, 10, 0" Click="ButtonDelete_Click"/>
+        </Grid>
+
+        <Grid Height="15" VerticalAlignment="Top" Background="#c2c7d3">
+            <Border BorderBrush="Gray" BorderThickness="0 1 0 1">
+                <TextBlock Text="Personal Information" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
         </Grid>
     </Grid>
 </Page>

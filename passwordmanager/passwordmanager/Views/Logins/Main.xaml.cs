@@ -63,7 +63,7 @@ namespace passwordmanager.Views.Logins
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
-            _mainwindow.UpdateFrameContent("/Views/Logins/Add.xaml");
+            _mainwindow.UpdateFrameContent("/Views/Logins/Add.xaml", "");
         }
     }
 }

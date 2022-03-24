@@ -25,6 +25,7 @@ namespace passwordmanager.Views.Personal_Information
         {
             public string text { get; set; }
         }
+
         string folder = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\";
         string[] jsonAESfiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\", "*.AES");
 
@@ -55,14 +56,14 @@ namespace passwordmanager.Views.Personal_Information
             ListBoxPersonal.ItemsSource = list;
         }
 
-        private void FileListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void ListBoxPersonal_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show(jsonAESfiles[ListBoxPersonal.SelectedIndex]);
+            _mainWindow.UpdateFrameContent("/Views/Personal Information/View.xaml", jsonAESfiles[ListBoxPersonal.SelectedIndex]);
         }
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
-            _mainWindow.UpdateFrameContent("/Views/Personal Information/Add.xaml");
+            _mainWindow.UpdateFrameContent("/Views/Personal Information/Add.xaml", "");
         }
 
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)

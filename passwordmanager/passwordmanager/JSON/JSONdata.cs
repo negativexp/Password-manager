@@ -21,8 +21,10 @@ namespace passwordmanager.JSON
             j.stateorprovince = "";
             j.countryorregion = "";
         }
-
         public string title { get; set; }
+        public DateTime timeCreated { get; set; }
+
+        //personal Information
         public string fullname { get; set; }
         public string email { get; set; }
         public string phone { get; set; }

@@ -45,33 +45,28 @@ namespace passwordmanager.Views.Login
             if (Properties.Settings.Default.pwdhash == "")
             {
                 //user havent created a password
-                CreatePassword();
+                if (TextBoxPassword.Text.Equals(TextBoxPasswordRepeat.Text))
+                {
+                    Properties.Settings.Default.pwdhash = Hash.SHA256.Create(TextBoxPassword.Text);
+                    Properties.Settings.Default.Save();
+                    this.Hide();
+                    MainWindow mw = new MainWindow();
+                    mw.Show();
+                }
+                else
+                    MessageBox.Show("Please type in the same password!", "ERROR!");
             }
             else
             {
-                CheckPassword();
+                if (Hash.SHA256.Create(TextBoxPassword.Text).Equals(Properties.Settings.Default.pwdhash))
+                {
+                    this.Hide();
+                    MainWindow mw = new MainWindow();
+                    mw.Show();
+                }
+                else
+                    MessageBox.Show("Wrong Password!");
             }
-            }
-            private void CreatePassword()
-        {
-            if (TextBoxPassword.Text.Equals(TextBoxPasswordRepeat.Text))
-            {
-                Properties.Settings.Default.pwdhash = Hash.SHA256.Create(TextBoxPassword.Text);
-                Properties.Settings.Default.Save();
-            }
-            else
-                MessageBox.Show("Please type in the same password!","ERROR!");
-        }
-        private void CheckPassword()
-        {
-            if(Hash.SHA256.Create(TextBoxPassword.Text).Equals(Properties.Settings.Default.pwdhash))
-            {
-                this.Hide();
-                MainWindow mw = new MainWindow();
-                mw.Show();
-            }
-            else
-                MessageBox.Show("Wrong Password!");
         }
     }
 }

@@ -34,7 +34,8 @@ namespace passwordmanager.JSON
                             city = XOR.XOR.EncryptOrDecrypt(city),
                             postalcode = XOR.XOR.EncryptOrDecrypt(postalcode),
                             stateorprovince = XOR.XOR.EncryptOrDecrypt(stateorprovince),
-                            countryorregion = XOR.XOR.EncryptOrDecrypt(countryorregion)
+                            countryorregion = XOR.XOR.EncryptOrDecrypt(countryorregion),
+                            timeCreated = DateTime.Now
                         });
                     }
                     else
