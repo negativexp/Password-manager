@@ -42,8 +42,8 @@ namespace passwordmanager.Views.Personal_Information
         }
         private void UpdateListBox()
         {
-            FileListBox.ItemsSource = null;
-            FileListBox.Items.Clear();
+            ListBoxPersonal.ItemsSource = null;
+            ListBoxPersonal.Items.Clear();
             List<TextNames> list = new List<TextNames>();
 
             foreach (string item in jsonAESfiles)
@@ -52,12 +52,12 @@ namespace passwordmanager.Views.Personal_Information
                 string cache2 = cache.Replace(".json", "");
                 list.Add(new TextNames() { text = cache2.Replace(".AES", "") });
             }
-            FileListBox.ItemsSource = list;
+            ListBoxPersonal.ItemsSource = list;
         }
 
         private void FileListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show(jsonAESfiles[FileListBox.SelectedIndex]);
+            MessageBox.Show(jsonAESfiles[ListBoxPersonal.SelectedIndex]);
         }
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
@@ -67,7 +67,7 @@ namespace passwordmanager.Views.Personal_Information
 
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
         {
-            File.Delete(jsonAESfiles[FileListBox.SelectedIndex]);
+            File.Delete(jsonAESfiles[ListBoxPersonal.SelectedIndex]);
             MessageBox.Show("Data has been deleted!", "Success!");
             UpdateListBox();
         }

@@ -23,9 +23,12 @@ namespace passwordmanager
         public MainWindow()
         {
             InitializeComponent();
+            Color myRgbColor = new Color();
+            myRgbColor
+
         }
 
-        public void UpdateFrameContent(string uri)
+    public void UpdateFrameContent(string uri)
         {
             if (uri == "/Views/Personal Information/Main.xaml")
                 FrameContent.Content = new Views.Personal_Information.Main(this);
@@ -44,17 +47,18 @@ namespace passwordmanager
         }
         private void PersonalInformation_Click(object sender, RoutedEventArgs e)
         {
+            ButtonPersonalInformation.Background = new SolidColorBrush(myRgbColor);
             FrameContent.Content = new Views.Personal_Information.Main(this);
+        }
+        private void Logins_Click(object sender, RoutedEventArgs e)
+        {
+            FrameContent.Content = new Views.Logins.Main(this);
         }
         private void SecureNotes_Click(object sender, RoutedEventArgs e)
         {
         }
         private void CreditCards_Click(object sender, RoutedEventArgs e)
         {
-        }
-        private void Logins_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void ButtonX_Click(object sender, RoutedEventArgs e)
