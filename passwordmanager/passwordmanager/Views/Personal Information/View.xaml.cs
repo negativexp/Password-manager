@@ -33,14 +33,16 @@ namespace passwordmanager.Views.Personal_Information
             string cache3 = cache2.Replace(".AES", "");
             TextBlockTitle.Text = cache3;
 
+
+
             try
             {
-                AES.Decryption.Decrypt(x, AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json", Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
+                AES.Decryption.Decrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\" + cache3 + ".json.AES", AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json", Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
                 JSONdeserialize(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong while decrypting the data!","ERROR!");
+                MessageBox.Show("Something went wrong while decrypting the data! " + ex.ToString(),"ERROR!");
             }
             finally
             {
@@ -49,12 +51,20 @@ namespace passwordmanager.Views.Personal_Information
         }
         private void JSONdeserialize(string path)
         {
-            dynamic dynJson = JsonConvert.DeserializeObject(File.ReadAllText(path));
-            foreach (var item in dynJson)
+            dynamic JSONitems = JsonConvert.DeserializeObject(File.ReadAllText(path));
+            foreach (var item in JSONitems)
             {
-                TextBoxTitle.Text = item.title;
+                TextBoxFullName.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.fullname));
+                TextBoxEmail.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.email));
+                TextBoxPhone.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.phone));
+                TextBoxAddressLine1.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.addressline1));
+                TextBoxAddressLine2.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.addressline2));
+                TextBoxCity.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.city));
+                TextBoxPostalCode.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.postalcode));
+                TextBoxStateOrProvince.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.stateorprovince));
+                TextBoxCountryOrRegion.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.countryorregion));
             }
-            dynJson = null;
+            JSONitems = null;
         }
     }
 }

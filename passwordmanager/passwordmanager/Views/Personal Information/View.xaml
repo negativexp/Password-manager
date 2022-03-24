@@ -36,12 +36,46 @@
     </Page.Resources>
 
     <Grid>
-        <Grid Height="40" VerticalAlignment="Top" Margin="0,525,0,0">
-            <Button Name="ButtonBack" Content="Back" Width="75" Height="25" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" Margin="0, 0, 10, 0"/>
+        <Grid Margin="0,15,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Name="TextBoxFullName" Height="30" Width="615" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Full Name"/>
+            <TextBox Name="TextBoxEmail" Height="30" Width="615" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Email"/>
+            <TextBox Name="TextBoxPhone" Height="30" Width="615" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Phone"/>
+            <TextBox Name="TextBoxAddressLine1" Height="30" Width="615" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Address Line 1"/>
+            <TextBox Name="TextBoxAddressLine2" Height="30" Width="615" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Address Line 2"/>
+            <TextBox Name="TextBoxCity" Grid.Row="5" Height="30" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="City" VerticalAlignment="Bottom" Margin="15,0,8,0"/>
+            <TextBox Name="TextBoxPostalCode" Height="30" Grid.Row="6" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="ZIP or Postal Code" Margin="15,0,8,0" />
+            <TextBox Name="TextBoxStateOrProvince" Height="30" Width="300" Grid.Row="5" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="State or Province" Margin="8,0,0,0" />
+            <TextBox Name="TextBoxCountryOrRegion" Height="30" Grid.Row="6" Grid.Column="1" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Country or Region" Margin="8,0,0,0" HorizontalAlignment="Left" Width="300"/>
+
+            <TextBlock Text="Full Name" Grid.Row="0" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
+            <TextBlock Text="Email" Grid.Row="1" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
+            <TextBlock Text="Phone" Grid.Row="2" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
+            <TextBlock Text="Address Line 1" Grid.Row="3" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
+            <TextBlock Text="Address Line 2" Grid.Row="4" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
+            <TextBlock Text="City" Grid.Row="5" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
+            <TextBlock Text="ZIP or Postal Code" Grid.Row="6" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
+            <TextBlock Text="State or Province" Grid.Row="5" Grid.Column="1" FontSize="14" FontFamily="Segoe UI" Margin="8 0 0 0"/>
+            <TextBlock Text="Country or Region" Grid.Row="6" FontSize="14" Grid.Column="1" FontFamily="Segoe UI" Margin="8 0 0 0"/>
         </Grid>
 
-        <Grid Height="510" Margin="0 15 0 0" VerticalAlignment="Top">
-            <TextBox IsEnabled="False" Name="TextBoxTitle" Height="30" Width="630" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"/>
+        <Grid Height="40" VerticalAlignment="Top" Margin="0,525,0,0">
+            <Button Name="ButtonBack" Content="Back" Width="75" Height="25" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" Margin="0, 0, 10, 0"/>
         </Grid>
 
         <Grid Height="15" VerticalAlignment="Top" Background="#c2c7d3">

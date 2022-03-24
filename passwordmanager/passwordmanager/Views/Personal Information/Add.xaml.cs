@@ -34,17 +34,23 @@ namespace passwordmanager.Views.Personal_Information
 
         private void ButtonCreate_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (TextBoxTitle.Text != "")
             {
-                JSON.JSONcreate.PersonalInformation.Create(TextBoxTitle.Text, TextBoxFullName.Text, TextBoxEmail.Text, TextBoxPhone.Text,
-                                                                TextBoxAddressLine1.Text, TextBoxAddressLine2.Text, TextBoxCity.Text, TextBoxPostalCode.Text,
-                                                                TextBoxStateOrProvince.Text, TextBoxCountryOrRegion.Text);
-                _mw.UpdateFrameContent("/Views/Personal Information/Main.xaml", "");
-                MessageBox.Show("Data has been created!","Success!");
+                try
+                {
+                    JSON.JSONcreate.PersonalInformation.Create(TextBoxTitle.Text, TextBoxFullName.Text, TextBoxEmail.Text, TextBoxPhone.Text,
+                                                                    TextBoxAddressLine1.Text, TextBoxAddressLine2.Text, TextBoxCity.Text, TextBoxPostalCode.Text,
+                                                                    TextBoxStateOrProvince.Text, TextBoxCountryOrRegion.Text);
+                    _mw.UpdateFrameContent("/Views/Personal Information/Main.xaml", "");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Something went wrong! " + ex.ToString(), "ERROR!");
+                } 
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Something went wrong! " + ex.ToString(),"ERROR!");
+                MessageBox.Show("The title cannot be empty!", "ERROR!");
             }
         }
     }

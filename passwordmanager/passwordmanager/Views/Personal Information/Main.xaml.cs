@@ -68,9 +68,16 @@ namespace passwordmanager.Views.Personal_Information
 
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
         {
-            File.Delete(jsonAESfiles[ListBoxPersonal.SelectedIndex]);
-            MessageBox.Show("Data has been deleted!", "Success!");
-            UpdateListBox();
+            try
+            {
+                File.Delete(jsonAESfiles[ListBoxPersonal.SelectedIndex]);
+                MessageBox.Show("Data has been deleted!", "Success!");
+                UpdateListBox();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please select an item!");
+            }
         }
     }
 }

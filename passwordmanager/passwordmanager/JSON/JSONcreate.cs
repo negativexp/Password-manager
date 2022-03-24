@@ -60,6 +60,7 @@ namespace passwordmanager.JSON
                             Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
 
                         File.Delete(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json");
+                        MessageBox.Show("Data has been created!", "Success!");
                     }
                     else
                     {
