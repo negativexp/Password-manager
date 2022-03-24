@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:passwordmanager.Views.Logins"
       mc:Ignorable="d" 
-      d:DesignHeight="565" d:DesignWidth="655"
+      d:DesignHeight="565" d:DesignWidth="645"
       Title="Maing">
 
     <Grid>
@@ -24,7 +24,7 @@
                 <DataTemplate>
                     <Grid VerticalAlignment="Center" Width="640" Height="40">
                         <!--<Image Source="/Images/key.png" Grid.Column="0"/>-->
-                        <TextBlock Text="{Binding title}" Grid.Column="1" HorizontalAlignment="Center" Margin="10" TextAlignment="Justify"/>
+                        <TextBlock Text="{Binding title}" Grid.Column="1" Margin="10" TextAlignment="Left"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -36,9 +36,10 @@
             <Button Name="ButtonDelete" Content="Delete" Width="75" Height="25" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" Margin="0, 0, 10, 0" Click="ButtonDelete_Click"/>
         </Grid>
 
-        <Grid Height="15" VerticalAlignment="Top" Background="White">
-            <TextBlock Text="Title" HorizontalAlignment="Center"/>
+        <Grid Height="15" VerticalAlignment="Top" Background="#c2c7d3">
+            <Border BorderBrush="Gray" BorderThickness="0 1 0 1">
+                <TextBlock Text="Personal Information" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
         </Grid>
-
     </Grid>
 </Page>

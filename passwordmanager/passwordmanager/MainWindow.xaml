@@ -30,15 +30,19 @@
                 <!--Personal Information button-->
                 <Button Name="ButtonLogins" Width="130" Height="40" Background="Transparent" Content="Logins"
                         FontSize="14" FontFamily="Segoe UI" Foreground="White"
-                        VerticalAlignment="Top" Margin="0,50,0,0" Click="Logins_Click" BorderThickness="0 1 0 0" HorizontalContentAlignment="Left"/>
+                        VerticalAlignment="Top" Margin="0,50,0,0" Click="Logins_Click" BorderThickness="0 1 0 0" HorizontalContentAlignment="Left">
+                </Button>
                 <!--Secure Notes button-->
                 <Button Name="ButtonPersonalInformation" Width="130" Height="40" Background="Transparent" Content="Personal Information"
                         FontSize="14" FontFamily="Segoe UI" Foreground="White"
-                        VerticalAlignment="Top" Margin="0,90,0,0" Click="PersonalInformation_Click" BorderThickness="0 1 0 0" HorizontalContentAlignment="Left"/>
+                        VerticalAlignment="Top" Margin="0,90,0,0" Click="PersonalInformation_Click" BorderThickness="0 1 0 0" HorizontalContentAlignment="Left">
+                </Button>
+
                 <!--Credit Cards button-->
                 <Button Name="ButtonCreditCards" Width="130" Height="40" Background="Transparent" Content="Credit Cards"
                     FontSize="14" FontFamily="Segoe UI" Foreground="White"
-                    VerticalAlignment="Top" Margin="0,130,0,0" Click="CreditCards_Click" BorderThickness="0 1 0 0" HorizontalContentAlignment="Left"/>
+                    VerticalAlignment="Top" Margin="0,130,0,0" Click="CreditCards_Click" BorderThickness="0 1 0 0" HorizontalContentAlignment="Left">
+                </Button>
                 <!--Credit Cards button-->
                 <Button Name="ButtonSecureNotes" Width="130" Height="40" Background="Transparent" Content="Secure Notes"
                     FontSize="14" FontFamily="Segoe UI" Foreground="White"
@@ -46,7 +50,7 @@
             </Grid>
 
             <!--content frame-->
-            <Frame x:Name="FrameContent" Width="655" Height="565" HorizontalAlignment="Left" NavigationUIVisibility="Hidden" VerticalAlignment="Bottom" Margin="150,0,0,0" x:FieldModifier="public"/>
+            <Frame x:Name="FrameContent" Height="565" NavigationUIVisibility="Hidden" VerticalAlignment="Bottom" Margin="155,0,0,0" x:FieldModifier="public" HorizontalAlignment="Left" Width="645"/>
 
             <!--<Grid Width="650" Height="40" HorizontalAlignment="Right" VerticalAlignment="Bottom" Name="bottomGrid">
                 <Button FontSize="14" FontFamily="Segoe UI" Content="Remove" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" Click="ButtonRemove_Click" Name="ButtonRemove"/>
