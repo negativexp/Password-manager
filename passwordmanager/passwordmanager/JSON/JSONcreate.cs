@@ -35,7 +35,7 @@ namespace passwordmanager.JSON
                             postalcode = XOR.XOR.EncryptOrDecrypt(postalcode),
                             stateorprovince = XOR.XOR.EncryptOrDecrypt(stateorprovince),
                             countryorregion = XOR.XOR.EncryptOrDecrypt(countryorregion),
-                            timecreated = DateTime.Now.ToString("MM/dd/yyyy h:mm tt")
+                            timecreated = DateTime.Now.ToString("dd/MM/yyyy h:mm tt")
                         });
                     }
                     else
