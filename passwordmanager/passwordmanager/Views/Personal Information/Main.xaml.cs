@@ -45,6 +45,8 @@ namespace passwordmanager.Views.Personal_Information
         {
             ListBoxPersonal.ItemsSource = null;
             ListBoxPersonal.Items.Clear();
+            ListBoxPersonal.UpdateLayout();
+
             List<TextNames> list = new List<TextNames>();
 
             foreach (string item in jsonAESfiles)
@@ -72,11 +74,14 @@ namespace passwordmanager.Views.Personal_Information
             {
                 File.Delete(jsonAESfiles[ListBoxPersonal.SelectedIndex]);
                 MessageBox.Show("Data has been deleted!", "Success!");
-                UpdateListBox();
             }
             catch (Exception)
             {
                 MessageBox.Show("Please select an item!");
+            }
+            finally
+            {
+                UpdateListBox();
             }
         }
     }

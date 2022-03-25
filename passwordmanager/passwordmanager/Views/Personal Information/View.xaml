@@ -80,7 +80,10 @@
 
         <Grid Height="15" VerticalAlignment="Top" Background="#c2c7d3">
             <Border BorderBrush="Gray" BorderThickness="0 1 0 1">
-                <TextBlock Name="TextBlockTitle" Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Grid>
+                    <TextBlock Name="TextBlockTitle" Text="" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Name="TextBlockTime" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </Grid>
             </Border>
         </Grid>
     </Grid>

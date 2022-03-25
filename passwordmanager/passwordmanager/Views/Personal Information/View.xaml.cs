@@ -31,7 +31,6 @@ namespace passwordmanager.Views.Personal_Information
             string cache = x.Replace(folder, "");
             string cache2 = cache.Replace(".json", "");
             string cache3 = cache2.Replace(".AES", "");
-            TextBlockTitle.Text = cache3;
 
 
 
@@ -42,7 +41,7 @@ namespace passwordmanager.Views.Personal_Information
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong while decrypting the data! " + ex.ToString(),"ERROR!");
+                MessageBox.Show("Something went wrong while decrypting the data! ","ERROR!");
             }
             finally
             {
@@ -54,6 +53,9 @@ namespace passwordmanager.Views.Personal_Information
             dynamic JSONitems = JsonConvert.DeserializeObject(File.ReadAllText(path));
             foreach (var item in JSONitems)
             {
+                TextBlockTitle.Text = item.title;
+                TextBlockTime.Text = item.timecreated;
+
                 TextBoxFullName.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.fullname));
                 TextBoxEmail.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.email));
                 TextBoxPhone.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.phone));

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,14 @@ namespace passwordmanager.Views.Login
         public Login()
         {
             InitializeComponent();
+            //create folders
+            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Cache");
+            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Personal Information");
+            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Logins");
+            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Credit Cards");
+            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Notes");
+
+
 
             //check if user has already made a password
             if (Properties.Settings.Default.pwdhash == "")

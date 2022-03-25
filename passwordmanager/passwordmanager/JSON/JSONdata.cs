@@ -22,7 +22,7 @@ namespace passwordmanager.JSON
             j.countryorregion = "";
         }
         public string title { get; set; }
-        public DateTime timeCreated { get; set; }
+        public string timecreated { get; set; }
 
         //personal Information
         public string fullname { get; set; }
