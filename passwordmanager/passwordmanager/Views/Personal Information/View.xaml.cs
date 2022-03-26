@@ -23,9 +23,11 @@ namespace passwordmanager.Views.Personal_Information
     /// </summary>
     public partial class View : Page
     {
-        public View(string x)
+        private readonly MainWindow _mw;
+        public View(string x, MainWindow mw)
         {
             InitializeComponent();
+            _mw = mw;
 
             string folder = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\";
             string cache = x.Replace(folder, "");
@@ -67,6 +69,11 @@ namespace passwordmanager.Views.Personal_Information
                 TextBoxCountryOrRegion.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.countryorregion));
             }
             JSONitems = null;
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            _mw.UpdateFrameContent("/Views/Personal Information/Main.xaml", "");
         }
     }
 }

@@ -60,7 +60,14 @@ namespace passwordmanager.Views.Personal_Information
 
         private void ListBoxPersonal_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            _mainWindow.UpdateFrameContent("/Views/Personal Information/View.xaml", jsonAESfiles[ListBoxPersonal.SelectedIndex]);
+            try
+            {
+                _mainWindow.UpdateFrameContent("/Views/Personal Information/View.xaml", jsonAESfiles[ListBoxPersonal.SelectedIndex]);
+            }
+            catch
+            {
+
+            }
         }
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)

@@ -27,12 +27,21 @@ namespace passwordmanager
 
         public void UpdateFrameContent(string uri, string index)
         {
+            //personal information
             if (uri == "/Views/Personal Information/Main.xaml")
                 FrameContent.Content = new Views.Personal_Information.Main(this);
             if (uri == "/Views/Personal Information/Add.xaml")
                 FrameContent.Content = new Views.Personal_Information.Add(this);
             if (uri == "/Views/Personal Information/View.xaml")
-                FrameContent.Content = new Views.Personal_Information.View(index);
+                FrameContent.Content = new Views.Personal_Information.View(index, this);
+
+            //logins
+            if (uri == "/Views/Logins/Main.xaml")
+                FrameContent.Content = new Views.Logins.Main(this);
+            if (uri == "/Views/Logins/Add.xaml")
+                FrameContent.Content = new Views.Logins.Add(this);
+
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

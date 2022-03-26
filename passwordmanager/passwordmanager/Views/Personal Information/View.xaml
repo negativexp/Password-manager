@@ -75,7 +75,7 @@
         </Grid>
 
         <Grid Height="40" VerticalAlignment="Top" Margin="0,525,0,0">
-            <Button Name="ButtonBack" Content="Back" Width="75" Height="25" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" Margin="0, 0, 10, 0"/>
+            <Button Name="ButtonBack" Content="Back" Width="75" Height="25" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" Margin="0, 0, 10, 0" Click="ButtonBack_Click"/>
         </Grid>
 
         <Grid Height="15" VerticalAlignment="Top" Background="#c2c7d3">

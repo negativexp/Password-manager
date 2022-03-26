@@ -20,9 +20,21 @@ namespace passwordmanager.Views.Logins
     /// </summary>
     public partial class Add : Page
     {
-        public Add()
+        private readonly MainWindow _mw;
+        public Add(MainWindow mw)
         {
             InitializeComponent();
+            _mw = mw;
+        }
+
+        private void ButtonCreate_Click(object sender, RoutedEventArgs e)
+        {
+            JSON.JSONcreate.Logins.Create(TextBoxTitle.Text, TextBoxUsername.Text, TextBoxEmail.Text, Hash.SHA256.Create(TextBoxPassword.Text), TextBoxURL.Text);
+        }
+
+        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            _mw.UpdateFrameContent("/Views/Logins/Main.xaml", "");
         }
     }
 }

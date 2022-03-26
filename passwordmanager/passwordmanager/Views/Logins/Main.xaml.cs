@@ -29,12 +29,12 @@ namespace passwordmanager.Views.Logins
         string folder = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\";
         string[] jsonAESfiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\", "*.AES");
 
-        private readonly MainWindow _mainwindow;
-        public Main(MainWindow mainwindow)
+        private readonly MainWindow _mw;
+        public Main(MainWindow mw)
         {
             InitializeComponent();
             UpdateListBox();
-            _mainwindow = mainwindow;
+            _mw = mw;
         }
         private void UpdateListBox()
         {
@@ -63,7 +63,7 @@ namespace passwordmanager.Views.Logins
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
-            _mainwindow.UpdateFrameContent("/Views/Logins/Add.xaml", "");
+            _mw.UpdateFrameContent("/Views/Logins/Add.xaml", "");
         }
     }
 }

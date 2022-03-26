@@ -37,10 +37,10 @@
     <Grid>
         <Grid Height="15" VerticalAlignment="Top" Background="#c2c7d3">
             <Border BorderBrush="Gray" BorderThickness="0 1 0 1">
-                <TextBlock Name="TextBlockTitle" Text="Add Personal Information" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Name="TextBlockTitle" Text="Personal Information" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
         </Grid>
-        <Grid Width="650" Height="40" VerticalAlignment="Bottom">
+        <Grid Height="40" VerticalAlignment="Top" Margin="0,525,0,0">
             <Button Name="ButtonCreate" Content="Create" Width="75" Height="25" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" Margin="0, 0, 90, 0" Click="ButtonCreate_Click"/>
             <Button Name="ButtonCancel" Content="Cancel" Width="75" Height="25" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" Margin="0, 0, 10, 0" Click="ButtonCancel_Click"/>
         </Grid>
