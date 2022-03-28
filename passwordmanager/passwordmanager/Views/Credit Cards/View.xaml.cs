@@ -56,10 +56,10 @@ namespace passwordmanager.Views.Logins
                 TextBlockTitle.Text = item.title;
                 TextBlockTime.Text = item.timecreated;
 
-                TextBoxUsername.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.username));
-                TextBoxEmail.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.email));
-                TextBoxPassword.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.password));
-                TextBoxURL.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.url));
+                TextBoxCardNumber.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.cardnumber));
+                TextBoxCardHolder.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.cardholder));
+                TextBoxValidToMonth.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.validtomonth));
+                TextBoxValidToYear.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.validtoyear));
             }
             JSONitems = null;
         }

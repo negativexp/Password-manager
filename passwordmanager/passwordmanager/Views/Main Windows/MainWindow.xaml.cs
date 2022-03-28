@@ -61,6 +61,8 @@ namespace passwordmanager
         }
         private void Logins_Click(object sender, RoutedEventArgs e)
         {
+            //no folder = no error???
+            //works without even the files being there (?)
             FrameContent.Content = new Views.Logins.Main(this);
         }
         private void SecureNotes_Click(object sender, RoutedEventArgs e)

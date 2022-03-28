@@ -29,7 +29,7 @@ namespace passwordmanager.Views.Logins
 
         private void ButtonCreate_Click(object sender, RoutedEventArgs e)
         {
-            JSON.JSONcreate.Logins.Create(TextBoxTitle.Text, TextBoxUsername.Text, TextBoxEmail.Text, TextBoxPassword.Text, TextBoxURL.Text);
+
         }
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
