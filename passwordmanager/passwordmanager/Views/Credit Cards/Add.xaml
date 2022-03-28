@@ -39,7 +39,7 @@
     <Grid>
         <Grid Height="15" VerticalAlignment="Top" Background="#c2c7d3">
             <Border BorderBrush="Gray" BorderThickness="0 1 0 1">
-                <TextBlock Name="TextBlockTitle" Text="Logins" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Name="TextBlockTitle" Text="Credit Cards" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
         </Grid>
 
@@ -65,11 +65,10 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Name="TextBoxTitle" Height="30" Width="615" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Title"/>
-            <TextBox Name="TextBoxUsername" Height="30" Width="615" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Username"/>
-            <TextBox Name="TextBoxEmail" Height="30" Width="615" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Email"/>
-            <TextBox Name="TextBoxPassword" Height="30" Width="615" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Password"/>
-            <TextBox Name="TextBoxURL" Height="30" Width="615" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="URL"/>
+            <TextBox Name="TextBoxCardNumber" Height="30" Width="615" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Card Number"/>
+            <TextBox Name="TextBoxCardHolder" Height="30" Width="615" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Card Holder"/>
+            <TextBox Name="TextBoxValidToMonth" Grid.Row="2" Height="30" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Month" VerticalAlignment="Bottom" Margin="15,0,8,0"/>
+            <TextBox Name="TextBoxValidToYear" Height="30" Width="300" Grid.Row="2" Grid.Column="1" FontSize="14" FontFamily="Segoe UI" VerticalAlignment="Bottom" HorizontalAlignment="Left" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Year" Margin="8,0,0,0" />
         </Grid>
     </Grid>
 </Page>

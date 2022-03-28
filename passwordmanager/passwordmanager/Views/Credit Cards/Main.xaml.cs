@@ -53,12 +53,31 @@ namespace passwordmanager.Views.Logins
 
         private void ListBoxLogins_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            try
+            {
+                _mw.UpdateFrameContent("/Views/Logins/View.xaml", jsonAESfiles[ListBoxLogins.SelectedIndex]);
+            }
+            catch
+            {
 
+            }
         }
 
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                File.Delete(jsonAESfiles[ListBoxLogins.SelectedIndex]);
+                MessageBox.Show("Data has been deleted!", "Success!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please select an item!");
+            }
+            finally
+            {
+                UpdateListBox();
+            }
         }
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)

@@ -40,6 +40,8 @@ namespace passwordmanager
                 FrameContent.Content = new Views.Logins.Main(this);
             if (uri == "/Views/Logins/Add.xaml")
                 FrameContent.Content = new Views.Logins.Add(this);
+            if (uri == "/Views/Logins/View.xaml")
+                FrameContent.Content = new Views.Logins.View(index, this);
 
 
         }

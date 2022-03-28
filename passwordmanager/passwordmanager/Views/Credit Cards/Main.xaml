@@ -38,7 +38,7 @@
 
         <Grid Height="15" VerticalAlignment="Top" Background="#c2c7d3">
             <Border BorderBrush="Gray" BorderThickness="0 1 0 1">
-                <TextBlock Text="Logins" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="Credit Cards" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
         </Grid>
     </Grid>

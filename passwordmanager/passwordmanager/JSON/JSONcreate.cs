@@ -75,6 +75,7 @@ namespace passwordmanager.JSON
                         _JSONDATA.Add(new JSONdata()
                         {
                             title = title,
+                            username = XOR.XOR.EncryptOrDecrypt(username),
                             email = XOR.XOR.EncryptOrDecrypt(email),
                             password = XOR.XOR.EncryptOrDecrypt(passowrd),
                             url = XOR.XOR.EncryptOrDecrypt(url),
