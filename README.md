@@ -1,5 +1,9 @@
 # OFFLINE password manager
 Store and secure your logins, personal information, credit cards and notes under one password
+## How to use
+When opening the program for the first time, enter your desired password (password checking for strongness +
+additional info about the user will be added later) and that's it. Then you can select what data you would like to
+create, type it in and press "Create" and you are done.
 ## Encryption
 ### How does it encrypt?
 First your data is stored in a JSON file format, later on the file gets encrypted using AES
@@ -9,11 +13,7 @@ where the .EXE is located
 Long story short, nothing is and neither is this. The contents can still be viewed in a memory scanner program
 like "Cheat Engine", but for this case where the program and files are local and secured under one password, it is 
 gonna be safe.
-## How to use
-When opening the program for the first time, enter your desired password (password checking for strongness +
-additional info about the user will be added later) and that's it. Then you can select what data you would like to
-create, type it in and press "Create" and you are done.
-## Bugs
+## Bug report
 Bug | Information | Fixed?
 --- | --- | --- |
 1 | If the folders are deleted after closing the login window, program crashes. | No
