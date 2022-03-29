@@ -1,9 +1,9 @@
-﻿<Page x:Class="passwordmanager.Views.Logins.Add"
+﻿<Page x:Class="passwordmanager.Views.Credit_Cards.Add"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:passwordmanager.Views.Logins"
+      xmlns:local="clr-namespace:passwordmanager.Views.Credit_Cards"
       mc:Ignorable="d" 
       d:DesignHeight="565" d:DesignWidth="645"
       Title="Add">
@@ -35,19 +35,16 @@
             </Setter>
         </Style>
     </Page.Resources>
-
     <Grid>
         <Grid Height="15" VerticalAlignment="Top" Background="#c2c7d3">
             <Border BorderBrush="Gray" BorderThickness="0 1 0 1">
                 <TextBlock Name="TextBlockTitle" Text="Credit Cards" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
         </Grid>
-
         <Grid Height="40" VerticalAlignment="Top" Margin="0,525,0,0">
             <Button Name="ButtonCreate" Content="Create" Width="75" Height="25" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" Margin="0, 0, 90, 0" Click="ButtonCreate_Click"/>
             <Button Name="ButtonCancel" Content="Cancel" Width="75" Height="25" FontSize="14" FontFamily="Segoe UI" HorizontalAlignment="Right" Margin="0, 0, 10, 0" Click="ButtonCancel_Click"/>
         </Grid>
-
         <Grid Background="#D1D5DE" Height="510" VerticalAlignment="Top" Margin="0,15,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
@@ -65,10 +62,13 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Name="TextBoxCardNumber" Height="30" Width="615" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Card Number"/>
-            <TextBox Name="TextBoxCardHolder" Height="30" Width="615" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Card Holder"/>
-            <TextBox Name="TextBoxValidToMonth" Grid.Row="2" Height="30" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Month" VerticalAlignment="Bottom" Margin="15,0,8,0"/>
-            <TextBox Name="TextBoxValidToYear" Height="30" Width="300" Grid.Row="2" Grid.Column="1" FontSize="14" FontFamily="Segoe UI" VerticalAlignment="Bottom" HorizontalAlignment="Left" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Year" Margin="8,0,0,0" />
+            <TextBox Name="TextBoxTitle" Height="30" Width="615" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Title"/>
+            <TextBox Name="TextBoxOwner" Height="30" Width="615" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Owner"/>
+            <TextBox Name="TextBoxCVV" Height="30" Width="615" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="CVV"/>
+            <TextBox Name="TextBoxCardNumber" Height="30" Width="615" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Card Number"/>
+            <TextBox Name="TextBoxExpireMonth" Height="30" Width="615" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Expiration date - Month"/>
+            <TextBox Name="TextBoxExpireYear" Height="30" Width="615" Grid.Row="5" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" Style="{StaticResource MyWaterMarkStyle}" Tag="Expiration date - Year"/>
+            
         </Grid>
     </Grid>
 </Page>

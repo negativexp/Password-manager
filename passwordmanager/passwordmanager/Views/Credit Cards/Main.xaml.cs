@@ -14,48 +14,51 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace passwordmanager.Views.Logins
+namespace passwordmanager.Views.Credit_Cards
 {
     /// <summary>
     /// Interakční logika pro Main.xaml
     /// </summary>
     public partial class Main : Page
     {
-        public class LoginTitle
+        class TextNames
         {
-            public string title { get; set; }
+            public string text { get; set; }
         }
 
-        string folder = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\";
-        string[] jsonAESfiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\", "*.AES");
+        string folder = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\";
+        string[] jsonAESfiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\", "*.AES");
 
-        private readonly MainWindow _mw;
-        public Main(MainWindow mw)
+        private readonly MainWindow _mainWindow;
+        public Main(MainWindow mainWindow)
         {
             InitializeComponent();
+            _mainWindow = mainWindow;
             UpdateListBox();
-            _mw = mw;
         }
+
         private void UpdateListBox()
         {
-            ListBoxLogins.ItemsSource = null;
-            ListBoxLogins.Items.Clear();
-            List<LoginTitle> list = new List<LoginTitle>();
+            ListBoxName.ItemsSource = null;
+            ListBoxName.Items.Clear();
+            ListBoxName.UpdateLayout();
+
+            List<TextNames> list = new List<TextNames>();
 
             foreach (string item in jsonAESfiles)
             {
                 string cache = item.Replace(folder, "");
                 string cache2 = cache.Replace(".json", "");
-                list.Add(new LoginTitle() { title = cache2.Replace(".AES", "") });
+                list.Add(new TextNames() { text = cache2.Replace(".AES", "") });
             }
-            ListBoxLogins.ItemsSource = list;
+            ListBoxName.ItemsSource = list;
         }
 
-        private void ListBoxLogins_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void ListBoxName_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             try
             {
-                _mw.UpdateFrameContent("/Views/Logins/View.xaml", jsonAESfiles[ListBoxLogins.SelectedIndex]);
+                _mainWindow.UpdateFrameContent("/Views/Credit Cards/View.xaml", jsonAESfiles[ListBoxName.SelectedIndex]);
             }
             catch
             {
@@ -63,11 +66,16 @@ namespace passwordmanager.Views.Logins
             }
         }
 
+        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            _mainWindow.UpdateFrameContent("/Views/Credit Cards/Add.xaml", "");
+        }
+
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                File.Delete(jsonAESfiles[ListBoxLogins.SelectedIndex]);
+                File.Delete(jsonAESfiles[ListBoxName.SelectedIndex]);
                 MessageBox.Show("Data has been deleted!", "Success!");
             }
             catch (Exception)
@@ -78,11 +86,6 @@ namespace passwordmanager.Views.Logins
             {
                 UpdateListBox();
             }
-        }
-
-        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
-        {
-            _mw.UpdateFrameContent("/Views/Logins/Add.xaml", "");
         }
     }
 }

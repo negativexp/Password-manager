@@ -28,7 +28,7 @@ namespace passwordmanager.Views.Login
             Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Personal Information");
             Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Logins");
             Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Credit Cards");
-            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Notes");
+            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Secure Notes");
 
 
 

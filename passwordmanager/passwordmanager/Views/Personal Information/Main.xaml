@@ -12,7 +12,7 @@
 
     <Grid>
         <Frame x:Name="FrameContent" VerticalAlignment="Bottom" HorizontalAlignment="Center" NavigationUIVisibility="Hidden"/>
-        <ListBox x:Name="ListBoxPersonal" BorderThickness="0" Width="650" Height="510" VerticalAlignment="Bottom" Background="#D1D5DE" Margin="0, 0, 0, 40" MouseDoubleClick="ListBoxPersonal_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <ListBox x:Name="ListBoxName" BorderThickness="0" Width="650" Height="510" VerticalAlignment="Bottom" Background="#D1D5DE" Margin="0, 0, 0, 40" MouseDoubleClick="ListBoxName_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Setter Property="FontSize" Value="14"/>

@@ -105,5 +105,91 @@ namespace passwordmanager.JSON
                 }
             }
         }
+        public class CreditCards
+        {
+            public static void Create(string title, string owner, string cvv, string cardnumber, string expiredateMonth, string expiredateYear)
+            {
+                List<JSONdata> _JSONDATA = new List<JSONdata>();
+                string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\" + title + ".json.AES";
+
+                try
+                {
+                    if (!File.Exists(path))
+                    {
+                        _JSONDATA.Add(new JSONdata()
+                        {
+                            title = title,
+                            owner = XOR.XOR.EncryptOrDecrypt(owner),
+                            cvv = XOR.XOR.EncryptOrDecrypt(cvv),
+                            cardnumber = XOR.XOR.EncryptOrDecrypt(cardnumber),
+                            expiredateMonth = XOR.XOR.EncryptOrDecrypt(expiredateMonth),
+                            expiredateYear = XOR.XOR.EncryptOrDecrypt(expiredateYear),
+                            timecreated = DateTime.Now.ToString("dd/MM/yyyy h:mm tt")
+                        });
+                        File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json",
+                                            JsonConvert.SerializeObject(_JSONDATA));
+                    }
+                    else
+                    {
+                        MessageBox.Show("The title you entered already exists!", "ERROR");
+                    }
+                }
+                catch (Exception e)
+                {
+                    //WriteLogs.Write(e);
+                    MessageBox.Show("Please check logs" + e.ToString(), "Something went wrong!");
+                }
+                finally
+                {
+                    AES.Encryption.Encrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json",
+                            AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\" + title + ".json.AES",
+                            Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
+
+                    File.Delete(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json");
+                    MessageBox.Show("Data has been created!", "Credit Cards");
+                }
+            }
+        }
+        public class SecureNotes
+        {
+            public static void Create(string title, string content)
+            {
+                List<JSONdata> _JSONDATA = new List<JSONdata>();
+                string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Secure Notes\" + title + ".json.AES";
+
+                try
+                {
+                    if (!File.Exists(path))
+                    {
+                        _JSONDATA.Add(new JSONdata()
+                        {
+                            title = title,
+                            content = XOR.XOR.EncryptOrDecrypt(content),
+                            timecreated = DateTime.Now.ToString("dd/MM/yyyy h:mm tt")
+                        });
+                        File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json",
+                                            JsonConvert.SerializeObject(_JSONDATA));
+                    }
+                    else
+                    {
+                        MessageBox.Show("The title you entered already exists!", "ERROR");
+                    }
+                }
+                catch (Exception e)
+                {
+                    //WriteLogs.Write(e);
+                    MessageBox.Show("Please check logs" + e.ToString(), "Something went wrong!");
+                }
+                finally
+                {
+                    AES.Encryption.Encrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json",
+                            AppDomain.CurrentDomain.BaseDirectory + @"\Data\Secure Notes\" + title + ".json.AES",
+                            Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
+
+                    File.Delete(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json");
+                    MessageBox.Show("Data has been created!", "Secure Notes");
+                }
+            }
+        }
     }
 }

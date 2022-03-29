@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace passwordmanager.Views.Logins
+namespace passwordmanager.Views.Credit_Cards
 {
     /// <summary>
     /// Interakční logika pro View.xaml
@@ -28,26 +28,27 @@ namespace passwordmanager.Views.Logins
             InitializeComponent();
             _mw = mw;
 
-            string folder = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\";
+            string folder = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\";
             string cache = x.Replace(folder, "");
             string cache2 = cache.Replace(".json", "");
             string cache3 = cache2.Replace(".AES", "");
 
+
+
             try
             {
-                AES.Decryption.Decrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\" + cache3 + ".json.AES", AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json", Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
+                AES.Decryption.Decrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\" + cache3 + ".json.AES", AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json", Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
                 JSONdeserialize(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong while decrypting the data! ", "ERROR!");
+                MessageBox.Show("Something went wrong while decrypting the data!", "ERROR!");
             }
             finally
             {
                 File.Delete(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json");
             }
         }
-
         private void JSONdeserialize(string path)
         {
             dynamic JSONitems = JsonConvert.DeserializeObject(File.ReadAllText(path));
@@ -56,22 +57,18 @@ namespace passwordmanager.Views.Logins
                 TextBlockTitle.Text = item.title;
                 TextBlockTime.Text = item.timecreated;
 
+                TextBoxOwner.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.owner));
+                TextBoxCVV.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.cvv));
                 TextBoxCardNumber.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.cardnumber));
-                TextBoxCardHolder.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.cardholder));
-                TextBoxValidToMonth.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.validtomonth));
-                TextBoxValidToYear.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.validtoyear));
+                TextBoxExpireMonth.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.expiredateMonth));
+                TextBoxExpireYear.Text = XOR.XOR.EncryptOrDecrypt(Convert.ToString(item.expiredateYear));
             }
             JSONitems = null;
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-
+            _mw.UpdateFrameContent("/Views/Credit Cards/Main.xaml", "");
         }
     }
 }

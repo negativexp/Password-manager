@@ -27,5 +27,15 @@ namespace passwordmanager.JSON
         public string password { get; set; }
         public string url { get; set; }
 
+        //credit cards
+        public string owner { get; set; }
+        public string cvv { get; set; }
+        public string cardnumber { get; set; }
+        public string expiredateMonth { get; set; }
+        public string expiredateYear { get; set; }
+
+        //secure notes
+        public string content { get; set; }
+
     }
 }

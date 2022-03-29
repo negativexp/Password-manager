@@ -43,6 +43,22 @@ namespace passwordmanager
             if (uri == "/Views/Logins/View.xaml")
                 FrameContent.Content = new Views.Logins.View(index, this);
 
+            //credit cards
+            if (uri == "/Views/Credit Cards/Main.xaml")
+                FrameContent.Content = new Views.Credit_Cards.Main(this);
+            if (uri == "/Views/Credit Cards/Add.xaml")
+                FrameContent.Content = new Views.Credit_Cards.Add(this);
+            if (uri == "/Views/Credit Cards/View.xaml")
+                FrameContent.Content = new Views.Credit_Cards.View(index, this);
+
+            //secure notes
+            if (uri == "/Views/Secure Notes/Main.xaml")
+                FrameContent.Content = new Views.Secure_Notes.Main(this);
+            if (uri == "/Views/Secure Notes/Add.xaml")
+                FrameContent.Content = new Views.Secure_Notes.Add(this);
+            if (uri == "/Views/Secure Notes/View.xaml")
+                FrameContent.Content = new Views.Secure_Notes.View(index, this);
+
 
         }
 
@@ -61,15 +77,15 @@ namespace passwordmanager
         }
         private void Logins_Click(object sender, RoutedEventArgs e)
         {
-            //no folder = no error???
-            //works without even the files being there (?)
             FrameContent.Content = new Views.Logins.Main(this);
         }
         private void SecureNotes_Click(object sender, RoutedEventArgs e)
         {
+            FrameContent.Content = new Views.Secure_Notes.Main(this);
         }
         private void CreditCards_Click(object sender, RoutedEventArgs e)
         {
+            FrameContent.Content = new Views.Credit_Cards.Main(this);
         }
 
         private void ButtonX_Click(object sender, RoutedEventArgs e)

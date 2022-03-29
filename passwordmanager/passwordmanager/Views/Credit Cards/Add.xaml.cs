@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace passwordmanager.Views.Logins
+namespace passwordmanager.Views.Credit_Cards
 {
     /// <summary>
     /// Interakční logika pro Add.xaml
@@ -27,14 +27,30 @@ namespace passwordmanager.Views.Logins
             _mw = mw;
         }
 
-        private void ButtonCreate_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
-            _mw.UpdateFrameContent("/Views/Logins/Main.xaml", "");
+            _mw.UpdateFrameContent("/Views/Credit Cards/Main.xaml", "");
+        }
+
+        private void ButtonCreate_Click(object sender, RoutedEventArgs e)
+        {
+            if (TextBoxTitle.Text != "")
+            {
+                try
+                {
+                    JSON.JSONcreate.CreditCards.Create(TextBoxTitle.Text, TextBoxOwner.Text, TextBoxCVV.Text,
+                                    TextBoxCardNumber.Text, TextBoxExpireMonth.Text, TextBoxExpireYear.Text);
+                    _mw.UpdateFrameContent("/Views/Credit Cards/Main.xaml", "");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Something went wrong! " + ex.ToString(), "ERROR!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("The title cannot be empty!", "ERROR!");
+            }
         }
     }
 }
