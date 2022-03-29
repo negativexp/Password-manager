@@ -13,3 +13,7 @@ gonna be safe.
 When opening the program for the first time, enter your desired password (password checking for strongness +
 additional info about the user will be added later) and that's it. Then you can select what data you would like to
 create, type it in and press "Create" and you are done.
+## Bugs
+Bug | Information | Fixed?
+--- | --- | --- |
+1 | If the folders are deleted after closing the login window, program crashes. | No
