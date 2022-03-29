@@ -11,7 +11,7 @@ and to top it off, the contents are encrypted using XOR. You can find the files 
 where the .EXE is located
 ### How secure is it?
 Long story short, nothing is and neither is this. The contents can still be viewed in a memory scanner program
-like "Cheat Engine", but where the program and files are local and secured/encrypted under one password, it is 
+like "Cheat Engine", the program and files are local and secured/encrypted under one password, it is 
 gonna be safe unless someone will know your password.
 ## Bug report
 Bug | Information | Fixed?
