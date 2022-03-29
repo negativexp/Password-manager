@@ -8,8 +8,7 @@ where the .EXE is located
 ### How secure is it?
 Long story short, nothing is and neither is this. The contents can still be viewed in a memory scanner program
 like "Cheat Engine", but for this case where the program and files are local and secured under one password, it is 
-gonna be safe, unless someone steals your whole computer. Even if they do and won't know the password, your files
-will be safe.
+gonna be safe.
 ## How to use
 When opening the program for the first time, enter your desired password (password checking for strongness +
 additional info about the user will be added later) and that's it. Then you can select what data you would like to
