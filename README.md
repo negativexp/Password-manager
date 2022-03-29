@@ -17,3 +17,4 @@ gonna be safe unless someone will know your password.
 Bug | Information | Fixed?
 --- | --- | --- |
 1 | If the folders are deleted after closing the login window, program crashes. | No
+2 | Memory leak when pressing buttons. | No
