@@ -54,9 +54,9 @@ namespace passwordmanager.Views.Login
             if (Properties.Settings.Default.pwdhash == "")
             {
                 //user havent created a password
-                if (TextBoxPassword.Text.Equals(TextBoxPasswordRepeat.Text))
+                if (TextBoxPassword.Password.Equals(TextBoxPasswordRepeat.Password))
                 {
-                    Properties.Settings.Default.pwdhash = Hash.SHA256.Create(TextBoxPassword.Text);
+                    Properties.Settings.Default.pwdhash = Hash.SHA256.Create(TextBoxPassword.Password);
                     Properties.Settings.Default.Save();
                     this.Hide();
                     MainWindow mw = new MainWindow();
@@ -67,7 +67,7 @@ namespace passwordmanager.Views.Login
             }
             else
             {
-                if (Hash.SHA256.Create(TextBoxPassword.Text).Equals(Properties.Settings.Default.pwdhash))
+                if (Hash.SHA256.Create(TextBoxPassword.Password).Equals(Properties.Settings.Default.pwdhash))
                 {
                     this.Hide();
                     MainWindow mw = new MainWindow();
