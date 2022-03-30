@@ -22,25 +22,22 @@ namespace passwordmanager.Views.Login
     {
         public Login()
         {
-            InitializeComponent();
+            //check if Password has been made
+            if (Properties.Settings.Default.pwdhash == "")
+            {
+                this.Hide();
+                Views.Main_Windows.Setup setup = new Views.Main_Windows.Setup();
+                setup.Show();
+            }
+
             //create folders
             Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Cache");
             Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Personal Information");
             Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Logins");
             Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Credit Cards");
-            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Secure Notes");
+            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Secure Notes");    
 
-
-
-            //check if user has already made a password
-            if (Properties.Settings.Default.pwdhash == "")
-            {
-                //user havent created a password
-            }
-            else
-            {
-                TextBoxPasswordRepeat.Visibility = Visibility.Hidden;
-            }
+            InitializeComponent();
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -50,32 +47,14 @@ namespace passwordmanager.Views.Login
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //check if user has already made a password
-            if (Properties.Settings.Default.pwdhash == "")
+            if (Hash.SHA256.Create(TextBoxPassword.Password).Equals(Properties.Settings.Default.pwdhash))
             {
-                //user havent created a password
-                if (TextBoxPassword.Password.Equals(TextBoxPasswordRepeat.Password))
-                {
-                    Properties.Settings.Default.pwdhash = Hash.SHA256.Create(TextBoxPassword.Password);
-                    Properties.Settings.Default.Save();
-                    this.Hide();
-                    MainWindow mw = new MainWindow();
-                    mw.Show();
-                }
-                else
-                    MessageBox.Show("Please type in the same password!", "ERROR!");
+                this.Hide();
+                MainWindow mw = new MainWindow();
+                mw.Show();
             }
             else
-            {
-                if (Hash.SHA256.Create(TextBoxPassword.Password).Equals(Properties.Settings.Default.pwdhash))
-                {
-                    this.Hide();
-                    MainWindow mw = new MainWindow();
-                    mw.Show();
-                }
-                else
-                    MessageBox.Show("Wrong Password!");
-            }
+                MessageBox.Show("Wrong Password!");
         }
     }
 }

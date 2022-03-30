@@ -34,5 +34,40 @@ namespace passwordmanager.Properties {
                 this["pwdhash"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string username {
+            get {
+                return ((string)(this["username"]));
+            }
+            set {
+                this["username"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string preferedName {
+            get {
+                return ((string)(this["preferedName"]));
+            }
+            set {
+                this["preferedName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime birthday {
+            get {
+                return ((global::System.DateTime)(this["birthday"]));
+            }
+            set {
+                this["birthday"] = value;
+            }
+        }
     }
 }

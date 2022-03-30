@@ -43,6 +43,7 @@ namespace passwordmanager.Views.Credit_Cards
             catch (Exception ex)
             {
                 MessageBox.Show("Something went wrong while decrypting the data!", "ERROR!");
+                _mw.UpdateFrameContent("/Views/Credit Cards/Main.xaml", "");
             }
             finally
             {

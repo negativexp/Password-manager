@@ -18,7 +18,7 @@ namespace passwordmanager.JSON
                                 string stateorprovince, string countryorregion)
             {
                 List<JSONdata> _JSONDATA = new List<JSONdata>();
-                string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\" + title + ".json.AES";
+                string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\" + title + ".AES";
                 try
                 {
                     if (!File.Exists(path))
@@ -53,7 +53,7 @@ namespace passwordmanager.JSON
                 finally
                 {
                     AES.Encryption.Encrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json",
-                            AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\" + title + ".json.AES",
+                            AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\" + title + ".AES",
                             Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
 
                     File.Delete(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json");
@@ -66,7 +66,7 @@ namespace passwordmanager.JSON
             public static void Create(string title, string username, string email, string passowrd, string url)
             {
                 List<JSONdata> _JSONDATA = new List<JSONdata>();
-                string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\" + title + ".json.AES";
+                string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\" + title + ".AES";
 
                 try
                 {
@@ -97,7 +97,7 @@ namespace passwordmanager.JSON
                 finally
                 {
                     AES.Encryption.Encrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json",
-                            AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\" + title + ".json.AES",
+                            AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\" + title + ".AES",
                             Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
 
                     File.Delete(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json");
@@ -110,7 +110,7 @@ namespace passwordmanager.JSON
             public static void Create(string title, string owner, string cvv, string cardnumber, string expiredateMonth, string expiredateYear)
             {
                 List<JSONdata> _JSONDATA = new List<JSONdata>();
-                string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\" + title + ".json.AES";
+                string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\" + title + ".AES";
 
                 try
                 {
@@ -142,7 +142,7 @@ namespace passwordmanager.JSON
                 finally
                 {
                     AES.Encryption.Encrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json",
-                            AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\" + title + ".json.AES",
+                            AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\" + title + ".AES",
                             Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
 
                     File.Delete(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json");
@@ -155,7 +155,7 @@ namespace passwordmanager.JSON
             public static void Create(string title, string content)
             {
                 List<JSONdata> _JSONDATA = new List<JSONdata>();
-                string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Secure Notes\" + title + ".json.AES";
+                string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Secure Notes\" + title + ".AES";
 
                 try
                 {
@@ -183,7 +183,7 @@ namespace passwordmanager.JSON
                 finally
                 {
                     AES.Encryption.Encrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json",
-                            AppDomain.CurrentDomain.BaseDirectory + @"\Data\Secure Notes\" + title + ".json.AES",
+                            AppDomain.CurrentDomain.BaseDirectory + @"\Data\Secure Notes\" + title + ".AES",
                             Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
 
                     File.Delete(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json");

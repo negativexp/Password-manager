@@ -51,14 +51,11 @@
 
             <!--content frame-->
             <Frame x:Name="FrameContent" Height="565" NavigationUIVisibility="Hidden" VerticalAlignment="Bottom" Margin="155,0,0,0" x:FieldModifier="public" HorizontalAlignment="Left" Width="645"/>
+            <Grid Name="MainGrid" Height="565" VerticalAlignment="Bottom" Margin="155,0,0,0" HorizontalAlignment="Left" Width="645">
+                <TextBlock Name="TextBlockPreferdName" Text="Welcome back, " FontSize="30" FontFamily="Segoe UI" HorizontalAlignment="Center"/>
+                <TextBlock Name="TextBlockAmountOfData" Text="Amount of data: " FontSize="20" FontFamily="Segoe UI" HorizontalAlignment="Left" Margin="0 50 0 0"/>
+            </Grid>
 
-            <!--<Grid Width="650" Height="40" HorizontalAlignment="Right" VerticalAlignment="Bottom" Name="bottomGrid">
-                <Button FontSize="14" FontFamily="Segoe UI" Content="Remove" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" Click="ButtonRemove_Click" Name="ButtonRemove"/>
-                <Button FontSize="14" FontFamily="Segoe UI" Content="Cancel" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" Click="ButtonCancel_Click" Name="ButtonCancel"/>
-                <Button FontSize="14" FontFamily="Segoe UI" Content="Edit" HorizontalAlignment="Right" Margin="0,0,95,10" VerticalAlignment="Bottom" Width="75" Click="ButtonEdit_Click" Name="ButtonEdit"/>
-                <Button FontSize="14" FontFamily="Segoe UI" Content="Create" HorizontalAlignment="Right" Margin="0,0,95,10" VerticalAlignment="Bottom" Width="75" Click="ButtonCreate_Click" Name="ButtonCreate"/>
-                <Button FontSize="14" FontFamily="Segoe UI" Content="Add" HorizontalAlignment="Right" Margin="0,0,180,10" VerticalAlignment="Bottom" Width="75" Click="ButtonAdd_Click" Name="ButtonAdd"/>
-            </Grid>-->
         </Grid>
     </Border>
 </Window>

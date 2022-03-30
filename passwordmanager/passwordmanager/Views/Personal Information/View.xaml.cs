@@ -44,6 +44,7 @@ namespace passwordmanager.Views.Personal_Information
             catch (Exception ex)
             {
                 MessageBox.Show("Something went wrong while decrypting the data! ","ERROR!");
+                _mw.UpdateFrameContent("/Views/Personal Information/Main.xaml", "");
             }
             finally
             {

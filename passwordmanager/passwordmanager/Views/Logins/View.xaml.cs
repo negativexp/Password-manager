@@ -43,6 +43,7 @@ namespace passwordmanager.Views.Logins
             catch (Exception ex)
             {
                 MessageBox.Show("Something went wrong while decrypting the data! ", "ERROR!");
+                _mw.UpdateFrameContent("/Views/Logins/Main.xaml", "");
             }
             finally
             {

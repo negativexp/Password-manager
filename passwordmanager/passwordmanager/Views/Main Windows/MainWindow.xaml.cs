@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace passwordmanager
         public MainWindow()
         {
             InitializeComponent();
+            ChangeData();
         }
 
         public void UpdateFrameContent(string uri, string index)
@@ -74,18 +76,22 @@ namespace passwordmanager
         private void PersonalInformation_Click(object sender, RoutedEventArgs e)
         {
             FrameContent.Content = new Views.Personal_Information.Main(this);
+            MainGrid.Visibility = Visibility.Hidden;
         }
         private void Logins_Click(object sender, RoutedEventArgs e)
         {
             FrameContent.Content = new Views.Logins.Main(this);
+            MainGrid.Visibility = Visibility.Hidden;
         }
         private void SecureNotes_Click(object sender, RoutedEventArgs e)
         {
             FrameContent.Content = new Views.Secure_Notes.Main(this);
+            MainGrid.Visibility = Visibility.Hidden;
         }
         private void CreditCards_Click(object sender, RoutedEventArgs e)
         {
             FrameContent.Content = new Views.Credit_Cards.Main(this);
+            MainGrid.Visibility = Visibility.Hidden;
         }
 
         private void ButtonX_Click(object sender, RoutedEventArgs e)
@@ -101,6 +107,15 @@ namespace passwordmanager
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             FrameContent.Content = null;
+            MainGrid.Visibility = Visibility.Visible;
+            ChangeData();
+        }
+        private void ChangeData()
+        {
+            TextBlockPreferdName.Text = "Welcome back, " + Properties.Settings.Default.preferedName + "!";
+
+            string[] data = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + "/Data/", "*.AES", SearchOption.AllDirectories);
+            TextBlockAmountOfData.Text = "Amount of data: " + data.Count();
         }
     }
 }
