@@ -26,7 +26,6 @@ namespace passwordmanager.Views.Secure_Notes
             public string text { get; set; }
         }
 
-        string folder = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Secure Notes\";
         string[] jsonAESfiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Secure Notes\", "*.AES");
 
         private readonly MainWindow _mainWindow;
@@ -41,15 +40,12 @@ namespace passwordmanager.Views.Secure_Notes
         {
             ListBoxName.ItemsSource = null;
             ListBoxName.Items.Clear();
-            ListBoxName.UpdateLayout();
 
             List<TextNames> list = new List<TextNames>();
 
             foreach (string item in jsonAESfiles)
             {
-                string cache = item.Replace(folder, "");
-                string cache2 = cache.Replace(".json", "");
-                list.Add(new TextNames() { text = cache2.Replace(".AES", "") });
+                list.Add(new TextNames() { text = System.IO.Path.GetFileName(item) });
             }
             ListBoxName.ItemsSource = list;
         }

@@ -7,8 +7,7 @@
       xmlns:Configuration="clr-namespace:System.Configuration;assembly=System" xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="passwordmanager.Views.Personal_Information.Main"
       mc:Ignorable="d" 
       d:DesignHeight="565" d:DesignWidth="645"
-      Title="Main"
-      Loaded="Main_Loaded">
+      Title="Main">
 
     <Grid>
         <Frame x:Name="FrameContent" VerticalAlignment="Bottom" HorizontalAlignment="Center" NavigationUIVisibility="Hidden"/>

@@ -37,7 +37,7 @@ namespace passwordmanager.Views.Logins
 
             try
             {
-                AES.Decryption.Decrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\" + cache3 + ".json.AES", AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json", Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
+                AES.Decryption.Decrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\" + cache3 + ".AES", AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json", Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
                 JSONdeserialize(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json");
             }
             catch (Exception ex)

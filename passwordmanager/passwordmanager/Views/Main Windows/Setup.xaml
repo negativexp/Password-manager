@@ -43,7 +43,7 @@
             <Border CornerRadius="5" BorderThickness="0" Background="#252323" Margin="-5,-5,-5,450" MouseDown="Border_MouseDown">
                 <Grid>
                     <TextBlock Text="Hi!" FontSize="20" FontFamily="Segoe UI" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-                    <TextBlock Text="Please fill in your basic information" FontSize="14" FontFamily="Segoe UI" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Please fill in your basic information and your password!" FontSize="14" FontFamily="Segoe UI" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
                     <Image Source="/Images/logo_without.png" HorizontalAlignment="Left"/>
                 </Grid>
             </Border>

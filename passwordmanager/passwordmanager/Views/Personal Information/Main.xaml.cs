@@ -26,7 +26,6 @@ namespace passwordmanager.Views.Personal_Information
             public string text { get; set; }
         }
 
-        string folder = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\";
         string[] jsonAESfiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\", "*.AES");
 
         private readonly MainWindow _mainWindow;
@@ -36,24 +35,16 @@ namespace passwordmanager.Views.Personal_Information
             _mainWindow = mainWindow;
             UpdateListBox();
         }
-
-        private void Main_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
         private void UpdateListBox()
         {
             ListBoxName.ItemsSource = null;
             ListBoxName.Items.Clear();
-            ListBoxName.UpdateLayout();
 
             List<TextNames> list = new List<TextNames>();
 
             foreach (string item in jsonAESfiles)
             {
-                string cache = item.Replace(folder, "");
-                string cache2 = cache.Replace(".json", "");
-                list.Add(new TextNames() { text = cache2.Replace(".AES", "") });
+                list.Add(new TextNames() { text = System.IO.Path.GetFileName(item)});
             }
             ListBoxName.ItemsSource = list;
         }

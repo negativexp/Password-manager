@@ -37,7 +37,7 @@ namespace passwordmanager.Views.Credit_Cards
 
             try
             {
-                AES.Decryption.Decrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\" + cache3 + ".json.AES", AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json", Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
+                AES.Decryption.Decrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\" + cache3 + ".AES", AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json", Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
                 JSONdeserialize(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json");
             }
             catch (Exception ex)
