@@ -22,6 +22,6 @@ Bug | Information | Fixed?
 ## TO-DO list 
  - [ ] View windows
     - [x] When double clicking a textbox, information gets copied to a clipboard
-    - [ ] In some view windows content can be edited
+    - [x] In some view windows content can be edited
     - [ ] Add edit button
   
