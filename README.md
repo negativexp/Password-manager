@@ -21,5 +21,7 @@ Bug | Information | Fixed?
 3 | After pressing delete button the listbox does not refresh | No
 ## TO-DO list 
  - [ ] View windows
-    - [ ] When double clicking a textbox information gets copied to a clipboard
+    - [ ] When double clicking a textbox, information gets copied to a clipboard
+    - [ ] In some view windows content can be edited
+    - [ ] Add edit button
   
