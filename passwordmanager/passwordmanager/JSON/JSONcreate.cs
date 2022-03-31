@@ -11,19 +11,29 @@ namespace passwordmanager.JSON
 {
     internal class JSONcreate
     {
+        public static string pwdhash;
+        public static void JSONdeserializeBasicInfo()
+        {
+            dynamic JSONitems = JsonConvert.DeserializeObject(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Basic.json"));
+            foreach (var item in JSONitems)
+            {
+                pwdhash = item.pwdhash;
+            }
+        }
         public class PersonalInformation
         {
             public static void Create(string title, string fullname, string email, string phone,
                                 string addressline1, string addressline2, string city, string postalcode,
                                 string stateorprovince, string countryorregion)
             {
-                List<JSONdata> _JSONDATA = new List<JSONdata>();
+                JSONdeserializeBasicInfo();
+                List<JSONdata.PersonalInformation> _JSONDATA = new List<JSONdata.PersonalInformation>();
                 string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\" + title + ".AES";
                 try
                 {
                     if (!File.Exists(path))
                     {
-                        _JSONDATA.Add(new JSONdata()
+                        _JSONDATA.Add(new JSONdata.PersonalInformation()
                         {
                             title = title,
                             fullname = XOR.XOR.EncryptOrDecrypt(fullname),
@@ -54,7 +64,7 @@ namespace passwordmanager.JSON
                 {
                     AES.Encryption.Encrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json",
                             AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\" + title + ".AES",
-                            Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
+                            Encoding.ASCII.GetBytes(pwdhash));
 
                     File.Delete(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json");
                         MessageBox.Show("Data has been created!", "Personal Information");
@@ -65,14 +75,15 @@ namespace passwordmanager.JSON
         {
             public static void Create(string title, string username, string email, string passowrd, string url)
             {
-                List<JSONdata> _JSONDATA = new List<JSONdata>();
+                JSONdeserializeBasicInfo();
+                List<JSONdata.Logins> _JSONDATA = new List<JSONdata.Logins>();
                 string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\" + title + ".AES";
 
                 try
                 {
                     if (!File.Exists(path))
                     {
-                        _JSONDATA.Add(new JSONdata()
+                        _JSONDATA.Add(new JSONdata.Logins()
                         {
                             title = title,
                             username = XOR.XOR.EncryptOrDecrypt(username),
@@ -98,7 +109,7 @@ namespace passwordmanager.JSON
                 {
                     AES.Encryption.Encrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json",
                             AppDomain.CurrentDomain.BaseDirectory + @"\Data\Logins\" + title + ".AES",
-                            Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
+                            Encoding.ASCII.GetBytes(pwdhash));
 
                     File.Delete(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json");
                         MessageBox.Show("Data has been created!", "Logins");
@@ -109,14 +120,15 @@ namespace passwordmanager.JSON
         {
             public static void Create(string title, string owner, string cvv, string cardnumber, string expiredateMonth, string expiredateYear)
             {
-                List<JSONdata> _JSONDATA = new List<JSONdata>();
+                JSONdeserializeBasicInfo();
+                List<JSONdata.CreditCards> _JSONDATA = new List<JSONdata.CreditCards>();
                 string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\" + title + ".AES";
 
                 try
                 {
                     if (!File.Exists(path))
                     {
-                        _JSONDATA.Add(new JSONdata()
+                        _JSONDATA.Add(new JSONdata.CreditCards()
                         {
                             title = title,
                             owner = XOR.XOR.EncryptOrDecrypt(owner),
@@ -143,7 +155,7 @@ namespace passwordmanager.JSON
                 {
                     AES.Encryption.Encrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json",
                             AppDomain.CurrentDomain.BaseDirectory + @"\Data\Credit Cards\" + title + ".AES",
-                            Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
+                            Encoding.ASCII.GetBytes(pwdhash));
 
                     File.Delete(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json");
                     MessageBox.Show("Data has been created!", "Credit Cards");
@@ -154,14 +166,15 @@ namespace passwordmanager.JSON
         {
             public static void Create(string title, string content)
             {
-                List<JSONdata> _JSONDATA = new List<JSONdata>();
+                JSONdeserializeBasicInfo();
+                List<JSONdata.SecureNotes> _JSONDATA = new List<JSONdata.SecureNotes>();
                 string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Secure Notes\" + title + ".AES";
 
                 try
                 {
                     if (!File.Exists(path))
                     {
-                        _JSONDATA.Add(new JSONdata()
+                        _JSONDATA.Add(new JSONdata.SecureNotes()
                         {
                             title = title,
                             content = XOR.XOR.EncryptOrDecrypt(content),
@@ -184,10 +197,30 @@ namespace passwordmanager.JSON
                 {
                     AES.Encryption.Encrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json",
                             AppDomain.CurrentDomain.BaseDirectory + @"\Data\Secure Notes\" + title + ".AES",
-                            Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
+                            Encoding.ASCII.GetBytes(pwdhash));
 
                     File.Delete(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + title + ".json");
                     MessageBox.Show("Data has been created!", "Secure Notes");
+                }
+            }
+        }
+        public class BasicInfo
+        {
+            public static void Create(string pwd, string username, string preferdusername, string birthday)
+            {
+                List<JSONdata.BasicInfo> _JSONDATA = new List<JSONdata.BasicInfo>();
+                string path = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Basic.json";
+
+                if (!File.Exists(path))
+                {
+                    _JSONDATA.Add(new JSONdata.BasicInfo()
+                    {
+                        pwdhash = pwd,
+                        basicusername = username,
+                        basicpreferdname = preferdusername,
+                        birthday = birthday
+                    });
+                    File.WriteAllText(path, JsonConvert.SerializeObject(_JSONDATA));
                 }
             }
         }

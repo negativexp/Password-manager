@@ -31,24 +31,11 @@ namespace passwordmanager.Views.Main_Windows
         {
             if (TextBoxPassword.Text.Equals(TextBoxPasswordSecond.Text))
             {
-                try
-                {
-                    Properties.Settings.Default.username = TextBoxUserName.Text;
-                    Properties.Settings.Default.preferedName = TextBoxPreferedName.Text;
-                    Properties.Settings.Default.birthday = DatePickerBirthDay.SelectedDate.Value.Date;
-                }
-                catch
-                {
+                JSON.JSONcreate.BasicInfo.Create(Hash.SHA256.Create(TextBoxPassword.Text), TextBoxUserName.Text, TextBoxPreferedName.Text, DatePickerBirthDay.Text);
 
-                }
-                finally
-                {
-                    Properties.Settings.Default.pwdhash = Hash.SHA256.Create(TextBoxPassword.Text);
-                    Properties.Settings.Default.Save();
-                    MainWindow mw = new MainWindow();
-                    this.Hide();
-                    mw.Show();
-                }
+                MainWindow mw = new MainWindow();
+                this.Hide();
+                mw.Show();
             }
             else
                 MessageBox.Show("Please enter the same password twice!");

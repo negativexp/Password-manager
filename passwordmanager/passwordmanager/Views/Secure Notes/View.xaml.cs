@@ -22,10 +22,13 @@ namespace passwordmanager.Views.Secure_Notes
     /// </summary>
     public partial class View : Page
     {
+        public static string pwdhash;
         private readonly MainWindow _mw;
         public View(string x, MainWindow mw)
         {
             InitializeComponent();
+            JSONdeserializeBasicInfo();
+
             _mw = mw;
 
             string folder = AppDomain.CurrentDomain.BaseDirectory + @"\Data\Secure Notes\";
@@ -37,7 +40,7 @@ namespace passwordmanager.Views.Secure_Notes
 
             try
             {
-                AES.Decryption.Decrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Secure Notes\" + cache3 + ".AES", AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json", Encoding.ASCII.GetBytes(Properties.Settings.Default.pwdhash));
+                AES.Decryption.Decrypt(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Secure Notes\" + cache3 + ".AES", AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json", Encoding.ASCII.GetBytes(pwdhash));
                 JSONdeserialize(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Cache\" + cache3 + ".json");
             }
             catch (Exception ex)
@@ -65,6 +68,14 @@ namespace passwordmanager.Views.Secure_Notes
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
             _mw.UpdateFrameContent("/Views/Secure Notes/Main.xaml", "");
+        }
+        private void JSONdeserializeBasicInfo()
+        {
+            dynamic JSONitems = JsonConvert.DeserializeObject(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Basic.json"));
+            foreach (var item in JSONitems)
+            {
+                pwdhash = item.pwdhash;
+            }
         }
     }
 }

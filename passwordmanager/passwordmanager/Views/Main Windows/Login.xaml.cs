@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,22 +21,32 @@ namespace passwordmanager.Views.Login
     /// </summary>
     public partial class Login : Window
     {
+        public static string pwdhash;
         public Login()
         {
-            //check if Password has been made
-            if (Properties.Settings.Default.pwdhash == "")
-            {
-                this.Hide();
-                Views.Main_Windows.Setup setup = new Views.Main_Windows.Setup();
-                setup.Show();
-            }
-
             //create folders
             Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Cache");
             Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Personal Information");
             Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Logins");
             Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Credit Cards");
-            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Secure Notes");    
+            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + "/Data/Secure Notes");
+
+            try
+            {
+                JSONdeserializeBasicInfo();
+            }
+            catch (Exception)
+            {
+
+            }
+
+            //check if Password has been made
+            if (pwdhash == null)
+            {
+                this.Hide();
+                Views.Main_Windows.Setup setup = new Views.Main_Windows.Setup();
+                setup.Show();
+            }
 
             InitializeComponent();
         }
@@ -47,7 +58,7 @@ namespace passwordmanager.Views.Login
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (Hash.SHA256.Create(TextBoxPassword.Password).Equals(Properties.Settings.Default.pwdhash))
+            if (Hash.SHA256.Create(TextBoxPassword.Password).Equals(pwdhash))
             {
                 this.Hide();
                 MainWindow mw = new MainWindow();
@@ -55,6 +66,14 @@ namespace passwordmanager.Views.Login
             }
             else
                 MessageBox.Show("Wrong Password!");
+        }
+        private void JSONdeserializeBasicInfo()
+        {
+            dynamic JSONitems = JsonConvert.DeserializeObject(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Basic.json"));
+            foreach (var item in JSONitems)
+            {
+                pwdhash = item.pwdhash;
+            }
         }
     }
 }

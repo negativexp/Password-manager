@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,10 +22,21 @@ namespace passwordmanager
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string preferdname;
         public MainWindow()
         {
             InitializeComponent();
+            JSONdeserializeBasicInfo();
             ChangeData();
+        }
+
+        private void JSONdeserializeBasicInfo()
+        {
+            dynamic JSONitems = JsonConvert.DeserializeObject(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Basic.json"));
+            foreach (var item in JSONitems)
+            {
+                preferdname = item.basicpreferdname;
+            }
         }
 
         public void UpdateFrameContent(string uri, string index)
@@ -116,7 +128,7 @@ namespace passwordmanager
         }
         private void ChangeData()
         {
-            TextBlockPreferdName.Text = "Welcome back, " + Properties.Settings.Default.preferedName + "!";
+            TextBlockPreferdName.Text = "Welcome back, " + preferdname + "!";
 
             string[] data = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + "/Data/", "*.AES", SearchOption.AllDirectories);
             TextBlockAmountOfData.Text = "Amount of data: " + data.Count();

@@ -76,10 +76,11 @@ namespace passwordmanager.Views.Logins
             try
             {
                 _mainWindow.UpdateFrameContent("/Views/Logins/View.xaml", jsonAESfiles[ListBoxName.SelectedIndex]);
+                MessageBox.Show("test");
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
         }
     }
