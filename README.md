@@ -19,3 +19,7 @@ Bug | Information | Fixed?
 1 | If the folders are deleted after closing the login window, program crashes. | No
 2 | Memory leak when pressing buttons. | No
 3 | After pressing delete button the listbox does not refresh | No
+## TO-DO list 
+| Information |
+| --- |
+| grr |
