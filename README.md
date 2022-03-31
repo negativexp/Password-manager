@@ -20,6 +20,6 @@ Bug | Information | Fixed?
 2 | Memory leak when pressing buttons. | No
 3 | After pressing delete button the listbox does not refresh | No
 ## TO-DO list 
-| Information |
-| --- |
-| grr |
+[ ] View windows
+  [ ] When double clicking a textbox information gets copied to a clipboard
+  
