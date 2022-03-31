@@ -44,7 +44,8 @@ namespace passwordmanager.Views.Personal_Information
 
             foreach (string item in jsonAESfiles)
             {
-                list.Add(new TextNames() { text = System.IO.Path.GetFileName(item)});
+                string cache = System.IO.Path.GetFileName(item);
+                list.Add(new TextNames() { text = cache.Replace(".AES", "")});
             }
             ListBoxName.ItemsSource = list;
         }
