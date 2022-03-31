@@ -26,18 +26,18 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Name="TextBoxOwner" Height="30" Width="615" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Full Name"/>
-            <TextBox Name="TextBoxCVV" Height="30" Width="615" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Email"/>
-            <TextBox Name="TextBoxCardNumber" Height="30" Width="615" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Phone"/>
-            <TextBox Name="TextBoxExpireMonth" Height="30" Width="615" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Address Line 1"/>
-            <TextBox Name="TextBoxExpireYear" Height="30" Width="615" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Address Line 2"/>
+            <TextBox Name="TextBoxOwner" Height="30" Width="615" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Full Name" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxOwner_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxCVV" Height="30" Width="615" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Email" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxCVV_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxCardNumber" Height="30" Width="615" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Phone" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxCardNumber_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxExpireMonth" Height="30" Width="615" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Address Line 1" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxExpireMonth_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxExpireYear" Height="30" Width="615" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Address Line 2" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxExpireYear_PreviewMouseDoubleClick"/>
             
 
-            <TextBlock Text="Owner" Grid.Row="0" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="CVV" Grid.Row="1" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="Card Number" Grid.Row="2" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="Experation date - Month" Grid.Row="3" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="Experation date - Year" Grid.Row="4" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
+            <TextBlock Text="Owner" Grid.Row="0" FontSize="14" FontFamily="Segoe UI" Margin="15,0,0,30"/>
+            <TextBlock Text="CVV" Grid.Row="1" FontSize="14" FontFamily="Segoe UI" Margin="15,0,0,30"/>
+            <TextBlock Text="Card Number" Grid.Row="2" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
+            <TextBlock Text="Experation date - Month" Grid.Row="3" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
+            <TextBlock Text="Experation date - Year" Grid.Row="4" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
             
         </Grid>
 

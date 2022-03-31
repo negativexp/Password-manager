@@ -82,5 +82,25 @@ namespace passwordmanager.Views.Logins
                 pwdhash = item.pwdhash;
             }
         }
+
+        private void TextBoxEmail_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxEmail.Text);
+        }
+
+        private void TextBoxUsername_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxUsername.Text);
+        }
+
+        private void TextBoxPassword_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxPassword.Text);
+        }
+
+        private void TextBoxURL_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxURL.Text);
+        }
     }
 }

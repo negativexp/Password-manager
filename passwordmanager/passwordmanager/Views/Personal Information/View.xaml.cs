@@ -88,5 +88,50 @@ namespace passwordmanager.Views.Personal_Information
                 pwdhash = item.pwdhash;
             }
         }
+
+        private void TextBoxFullName_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxFullName.Text);
+        }
+
+        private void TextBoxEmail_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxEmail.Text);
+        }
+
+        private void TextBoxPhone_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxPhone.Text);
+        }
+
+        private void TextBoxAddressLine1_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxAddressLine1.Text);
+        }
+
+        private void TextBoxAddressLine2_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxAddressLine2.Text);
+        }
+
+        private void TextBoxCity_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxCity.Text);
+        }
+
+        private void TextBoxPostalCode_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxPostalCode.Text);
+        }
+
+        private void TextBoxStateOrProvince_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxStateOrProvince.Text);
+        }
+
+        private void TextBoxCountryOrRegion_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxCountryOrRegion.Text);
+        }
     }
 }

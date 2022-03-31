@@ -82,5 +82,30 @@ namespace passwordmanager.Views.Credit_Cards
         {
             _mw.UpdateFrameContent("/Views/Credit Cards/Main.xaml", "");
         }
+
+        private void TextBoxOwner_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxOwner.Text);
+        }
+
+        private void TextBoxCVV_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxCVV.Text);
+        }
+
+        private void TextBoxCardNumber_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxCardNumber.Text);
+        }
+
+        private void TextBoxExpireMonth_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxExpireMonth.Text);
+        }
+
+        private void TextBoxExpireYear_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxExpireYear.Text);
+        }
     }
 }

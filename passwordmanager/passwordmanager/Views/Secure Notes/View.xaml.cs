@@ -77,5 +77,10 @@ namespace passwordmanager.Views.Secure_Notes
                 pwdhash = item.pwdhash;
             }
         }
+
+        private void TextBoxContent_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Clipboard.SetText(TextBoxContent.Text);
+        }
     }
 }

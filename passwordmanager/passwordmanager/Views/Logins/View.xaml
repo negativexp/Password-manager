@@ -26,17 +26,17 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            
-            <TextBox Name="TextBoxEmail" Height="30" Width="615" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Email"/>
-            <TextBox Name="TextBoxUsername" Height="30" Width="615" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Phone"/>
-            <TextBox Name="TextBoxPassword" Height="30" Width="615" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Address Line 1"/>
-            <TextBox Name="TextBoxURL" Height="30" Width="615" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Address Line 2"/>
+
+            <TextBox Name="TextBoxEmail" Height="30" Width="615" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxEmail_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxUsername" Height="30" Width="615" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxUsername_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxPassword" Height="30" Width="615" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxPassword_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxURL" Height="30" Width="615" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxURL_PreviewMouseDoubleClick"/>
 
             
-            <TextBlock Text="Email" Grid.Row="0" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="Username" Grid.Row="1" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="Password" Grid.Row="2" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="URL" Grid.Row="3" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
+            <TextBlock Text="Email" Grid.Row="0" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
+            <TextBlock Text="Username" Grid.Row="1" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
+            <TextBlock Text="Password" Grid.Row="2" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
+            <TextBlock Text="URL" Grid.Row="3" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
             
         </Grid>
 

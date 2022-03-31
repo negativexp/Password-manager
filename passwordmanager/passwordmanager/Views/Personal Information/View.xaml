@@ -26,25 +26,25 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Name="TextBoxFullName" Height="30" Width="615" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Full Name"/>
-            <TextBox Name="TextBoxEmail" Height="30" Width="615" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Email"/>
-            <TextBox Name="TextBoxPhone" Height="30" Width="615" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Phone"/>
-            <TextBox Name="TextBoxAddressLine1" Height="30" Width="615" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Address Line 1"/>
-            <TextBox Name="TextBoxAddressLine2" Height="30" Width="615" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Address Line 2"/>
-            <TextBox Name="TextBoxCity" Grid.Row="5" Height="30" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="City" VerticalAlignment="Bottom" Margin="15,0,8,0"/>
-            <TextBox Name="TextBoxPostalCode" Height="30" Grid.Row="6" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="ZIP or Postal Code" Margin="15,0,8,0" />
-            <TextBox Name="TextBoxStateOrProvince" Height="30" Width="300" Grid.Row="5" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="State or Province" Margin="8,0,0,0" />
-            <TextBox Name="TextBoxCountryOrRegion" Height="30" Grid.Row="6" Grid.Column="1" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Country or Region" Margin="8,0,0,0" HorizontalAlignment="Left" Width="300"/>
+            <TextBox Name="TextBoxFullName" Height="30" Width="615" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Full Name" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxFullName_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxEmail" Height="30" Width="615" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Email" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxEmail_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxPhone" Height="30" Width="615" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Phone" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxPhone_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxAddressLine1" Height="30" Width="615" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Address Line 1" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxAddressLine1_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxAddressLine2" Height="30" Width="615" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Address Line 2" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxAddressLine2_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxCity" Grid.Row="5" Height="30" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="City" VerticalAlignment="Bottom" Margin="15,0,8,0" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxCity_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxPostalCode" Height="30" Grid.Row="6" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="ZIP or Postal Code" Margin="15,0,8,0" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxPostalCode_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxStateOrProvince" Height="30" Width="300" Grid.Row="5" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="State or Province" Margin="8,0,0,0" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxStateOrProvince_PreviewMouseDoubleClick"/>
+            <TextBox Name="TextBoxCountryOrRegion" Height="30" Grid.Row="6" Grid.Column="1" VerticalAlignment="Bottom" FontSize="14" FontFamily="Segoe UI" VerticalContentAlignment="Center"  Tag="Country or Region" Margin="8,0,0,0" HorizontalAlignment="Left" Width="300" IsReadOnly="True" PreviewMouseDoubleClick="TextBoxCountryOrRegion_PreviewMouseDoubleClick"/>
 
-            <TextBlock Text="Full Name" Grid.Row="0" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="Email" Grid.Row="1" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="Phone" Grid.Row="2" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="Address Line 1" Grid.Row="3" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="Address Line 2" Grid.Row="4" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="City" Grid.Row="5" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="ZIP or Postal Code" Grid.Row="6" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 0"/>
-            <TextBlock Text="State or Province" Grid.Row="5" Grid.Column="1" FontSize="14" FontFamily="Segoe UI" Margin="8 0 0 0"/>
-            <TextBlock Text="Country or Region" Grid.Row="6" FontSize="14" Grid.Column="1" FontFamily="Segoe UI" Margin="8 0 0 0"/>
+            <TextBlock Text="Full Name" Grid.Row="0" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
+            <TextBlock Text="Email" Grid.Row="1" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
+            <TextBlock Text="Phone" Grid.Row="2" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
+            <TextBlock Text="Address Line 1" Grid.Row="3" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
+            <TextBlock Text="Address Line 2" Grid.Row="4" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
+            <TextBlock Text="City" Grid.Row="5" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
+            <TextBlock Text="ZIP or Postal Code" Grid.Row="6" FontSize="14" FontFamily="Segoe UI" Margin="15 0 0 30"/>
+            <TextBlock Text="State or Province" Grid.Row="5" Grid.Column="1" FontSize="14" FontFamily="Segoe UI" Margin="8 0 0 30"/>
+            <TextBlock Text="Country or Region" Grid.Row="6" FontSize="14" Grid.Column="1" FontFamily="Segoe UI" Margin="8 0 0 30"/>
         </Grid>
 
         <Grid Height="40" VerticalAlignment="Top" Margin="0,525,0,0">
