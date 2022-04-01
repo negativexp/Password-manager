@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace passwordmanager.Views.Logins
 {
@@ -86,21 +87,50 @@ namespace passwordmanager.Views.Logins
         private void TextBoxEmail_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxEmail.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: Email " + "({0})", TextBoxEmail.Text);
+            t.Start();
         }
 
         private void TextBoxUsername_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxUsername.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: Username " + "({0})", TextBoxUsername.Text);
+            t.Start();
         }
 
         private void TextBoxPassword_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxPassword.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: Password");
+            t.Start();
         }
 
         private void TextBoxURL_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxURL.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: URL " + "({0})", TextBoxURL.Text);
+            t.Start();
+        }
+
+        static DispatcherTimer t = new DispatcherTimer();
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            t.Interval = new TimeSpan(0, 0, 5);
+            t.Tick += (EventHandler)delegate (object snd, EventArgs ea)
+            {
+                TextBlockCopied.Visibility = Visibility.Collapsed;
+                ((DispatcherTimer)snd).Stop();
+            };
+
+            TextBlockCopied.Visibility = Visibility.Hidden;
         }
     }
 }

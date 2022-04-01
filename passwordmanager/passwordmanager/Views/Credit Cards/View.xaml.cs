@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace passwordmanager.Views.Credit_Cards
 {
@@ -86,26 +87,59 @@ namespace passwordmanager.Views.Credit_Cards
         private void TextBoxOwner_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxOwner.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: Owner " + "({0})", TextBoxOwner.Text);
+            t.Start();
         }
 
         private void TextBoxCVV_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxCVV.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: CVV");
+            t.Start();
         }
 
         private void TextBoxCardNumber_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxCardNumber.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: Card Number " + "({0})", TextBoxCardNumber.Text);
+            t.Start();
         }
 
         private void TextBoxExpireMonth_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxExpireMonth.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: Experation Date - Month " + "({0})", TextBoxExpireMonth.Text);
+            t.Start();
         }
 
         private void TextBoxExpireYear_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxExpireYear.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: Experation Date - Year " + "({0})", TextBoxExpireYear.Text);
+            t.Start();
+        }
+
+        static DispatcherTimer t = new DispatcherTimer();
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            t.Interval = new TimeSpan(0, 0, 5);
+            t.Tick += (EventHandler)delegate (object snd, EventArgs ea)
+            {
+                TextBlockCopied.Visibility = Visibility.Collapsed;
+                ((DispatcherTimer)snd).Stop();
+            };
+
+            TextBlockCopied.Visibility = Visibility.Hidden;
         }
     }
 }

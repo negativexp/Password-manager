@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -13,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -92,46 +96,96 @@ namespace passwordmanager.Views.Personal_Information
         private void TextBoxFullName_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxFullName.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: Full Name " + "({0})", TextBoxFullName.Text);
+            t.Start();
+
         }
 
         private void TextBoxEmail_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxEmail.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: Email " + "({0})", TextBoxEmail.Text);
+            t.Start();
         }
 
         private void TextBoxPhone_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxPhone.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: Phone " + "({0})", TextBoxPhone.Text);
+            t.Start();
         }
 
         private void TextBoxAddressLine1_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxAddressLine1.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: Address Line 1 " + "({0})", TextBoxAddressLine1.Text);
+            t.Start();
         }
 
         private void TextBoxAddressLine2_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxAddressLine2.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: Address Line 2 " + "({0})", TextBoxAddressLine2.Text);
+            t.Start();
         }
 
         private void TextBoxCity_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxCity.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: City " + "({0})", TextBoxCity.Text);
+            t.Start();
         }
 
         private void TextBoxPostalCode_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxPostalCode.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: ZIP or Postal Code " + "({0})", TextBoxPostalCode.Text);
+            t.Start();
         }
 
         private void TextBoxStateOrProvince_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxStateOrProvince.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: State or Province " + "({0})", TextBoxStateOrProvince.Text);
+            t.Start();
         }
 
         private void TextBoxCountryOrRegion_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Clipboard.SetText(TextBoxCountryOrRegion.Text);
+
+            TextBlockCopied.Visibility = Visibility.Visible;
+            TextBlockCopied.Content = string.Format("Copied: Country or Region " + "({0})", TextBoxCountryOrRegion.Text);
+            t.Start();
+        }
+
+        static DispatcherTimer t = new DispatcherTimer();
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            t.Interval = new TimeSpan(0, 0, 5);
+            t.Tick += (EventHandler)delegate (object snd, EventArgs ea)
+            {
+                TextBlockCopied.Visibility = Visibility.Collapsed;
+                ((DispatcherTimer)snd).Stop();
+            };
+
+            TextBlockCopied.Visibility = Visibility.Hidden;
         }
     }
 }
