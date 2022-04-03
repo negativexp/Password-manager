@@ -105,9 +105,15 @@ namespace passwordmanager
             FrameContent.Content = new Views.Credit_Cards.Main(this);
             MainGrid.Visibility = Visibility.Hidden;
         }
+        private void PasswordGenerator_Click(object sender, RoutedEventArgs e)
+        {
+            FrameContent.Content = new Views.Password_Generator.PasswordGenerator();
+            MainGrid.Visibility = Visibility.Hidden;
+        }
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
             FrameContent.Content = new Views.Main_Windows.Settings.Settings();
+            MainGrid.Visibility = Visibility.Hidden;
         }
 
         private void ButtonX_Click(object sender, RoutedEventArgs e)

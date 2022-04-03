@@ -52,7 +52,7 @@
                     FontSize="14" FontFamily="Segoe UI" Foreground="White" Margin="15,555,15,15" Click="Settings_Click" BorderThickness="0 1 0 0" HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Bottom"/>
                 <Button x:Name="ButtonPasswordGenerator" Background="Transparent" Content="Password generator"
-                    FontSize="14" FontFamily="Segoe UI" Foreground="White" Margin="15,515,15,55" Click="Settings_Click" BorderThickness="0 1 0 0" HorizontalContentAlignment="Center"
+                    FontSize="14" FontFamily="Segoe UI" Foreground="White" Margin="15,515,15,55" Click="PasswordGenerator_Click" BorderThickness="0 1 0 0" HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"/>
             </Grid>
 
