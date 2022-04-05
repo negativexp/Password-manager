@@ -26,8 +26,27 @@ namespace passwordmanager.Views.Personal_Information
             public string text { get; set; }
         }
 
-        string[] jsonAESfiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\", "*.AES");
+        private bool CheckDirectory()
+        {
+            return
+            Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "/Data/Cache") &
+            Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "/Data/Personal Information") &
+            Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "/Data/Logins") &
+            Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "/Data/Credit Cards") &
+            Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "/Data/Secure Notes");
+        }
 
+        private string[] GetjsonAESfiles()
+        {
+            if (!CheckDirectory())
+            {
+                MessageBox.Show("Missing folders");
+                Environment.Exit(1);
+                return null;
+            }
+            return Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\", "*.AES");
+        }
+        
         private readonly MainWindow _mainWindow;
         public Main(MainWindow mainWindow)
         {
@@ -35,16 +54,15 @@ namespace passwordmanager.Views.Personal_Information
             _mainWindow = mainWindow;
             UpdateListBox();
         }
+
         private void UpdateListBox()
         {
             ListBoxName.ItemsSource = null;
             ListBoxName.Items.Clear();
 
-            jsonAESfiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\", "*.AES");
-
             List<TextNames> list = new List<TextNames>();
 
-            foreach (string item in jsonAESfiles)
+            foreach (string item in GetjsonAESfiles())
             {
                 string cache = System.IO.Path.GetFileName(item);
                 list.Add(new TextNames() { text = cache.Replace(".AES", "")});
@@ -56,7 +74,7 @@ namespace passwordmanager.Views.Personal_Information
         {
             try
             {
-                _mainWindow.UpdateFrameContent("/Views/Personal Information/View.xaml", jsonAESfiles[ListBoxName.SelectedIndex]);
+                _mainWindow.UpdateFrameContent("/Views/Personal Information/View.xaml", GetjsonAESfiles()[ListBoxName.SelectedIndex]);
             }
             catch
             {
@@ -73,7 +91,7 @@ namespace passwordmanager.Views.Personal_Information
         {
             try
             {
-                File.Delete(jsonAESfiles[ListBoxName.SelectedIndex]);
+                File.Delete(GetjsonAESfiles()[ListBoxName.SelectedIndex]);
                 MessageBox.Show("Data has been deleted!", "Success!");
             }
             catch (Exception)
