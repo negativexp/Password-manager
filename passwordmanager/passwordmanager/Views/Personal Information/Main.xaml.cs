@@ -40,6 +40,8 @@ namespace passwordmanager.Views.Personal_Information
             ListBoxName.ItemsSource = null;
             ListBoxName.Items.Clear();
 
+            jsonAESfiles = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + @"\Data\Personal Information\", "*.AES");
+
             List<TextNames> list = new List<TextNames>();
 
             foreach (string item in jsonAESfiles)
