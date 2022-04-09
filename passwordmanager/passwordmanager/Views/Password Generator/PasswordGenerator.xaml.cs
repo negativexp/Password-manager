@@ -27,7 +27,7 @@ namespace passwordmanager.Views.Password_Generator
 
         const string UppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         const string LowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
-        const string Symbols = "!;#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+        const string Symbols = "!;#$%&'()*+,-./:;<=>?@[]^_{|}~";
         const string Numbers = "0123456789";
         const string AmbiguousCharacters = "{}[]()/\'`~,;:.<>";
 
@@ -59,13 +59,25 @@ namespace passwordmanager.Views.Password_Generator
             }
 
             char[] charactersArray = characters.ToCharArray();
-            int value = Convert.ToInt32(TextBoxPasswordLenght.Text);
-
-            while (0 < value--)
+            if(charactersArray.Length != 0)
             {
-                sb.Append(charactersArray[rdm.Next(charactersArray.Length)]);
+                int value = 0;
+
+                try
+                {
+                    value = Convert.ToInt32(TextBoxPasswordLenght.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Please enter lenght value in numbers!");
+                }
+
+                while (0 < value--)
+                {
+                    sb.Append(charactersArray[rdm.Next(charactersArray.Length)]);
+                }
+                TextBoxPassowrd.Text = sb.ToString();
             }
-            TextBoxPassowrd.Text = sb.ToString();
         }
     }
 }
