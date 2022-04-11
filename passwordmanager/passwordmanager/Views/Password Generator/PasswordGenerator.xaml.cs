@@ -59,6 +59,7 @@ namespace passwordmanager.Views.Password_Generator
             }
 
             char[] charactersArray = characters.ToCharArray();
+
             if(charactersArray.Length != 0)
             {
                 int value = 0;
@@ -69,14 +70,19 @@ namespace passwordmanager.Views.Password_Generator
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Please enter lenght value in numbers!");
+                    MessageBox.Show("Please enter a valid password lenght!");
                 }
+
 
                 while (0 < value--)
                 {
                     sb.Append(charactersArray[rdm.Next(charactersArray.Length)]);
                 }
                 TextBoxPassowrd.Text = sb.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid value");
             }
         }
     }

@@ -110,11 +110,6 @@ namespace passwordmanager
             FrameContent.Content = new Views.Password_Generator.PasswordGenerator();
             MainGrid.Visibility = Visibility.Hidden;
         }
-        private void Settings_Click(object sender, RoutedEventArgs e)
-        {
-            FrameContent.Content = new Views.Main_Windows.Settings.Settings();
-            MainGrid.Visibility = Visibility.Hidden;
-        }
 
         private void ButtonX_Click(object sender, RoutedEventArgs e)
         {
@@ -123,7 +118,6 @@ namespace passwordmanager
         private void ButtonMinimze_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
-
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -138,6 +132,12 @@ namespace passwordmanager
 
             string[] data = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + "/Data/", "*.AES", SearchOption.AllDirectories);
             TextBlockAmountOfData.Text = "Amount of data: " + data.Count();
+        }
+
+        private void ButtonChangePassword_Click(object sender, RoutedEventArgs e)
+        {
+            FrameContent.Content = new Views.Main_Windows.Change_Password_Window.ChangePasswordWindow();
+            MainGrid.Visibility = Visibility.Hidden;
         }
     }
 }

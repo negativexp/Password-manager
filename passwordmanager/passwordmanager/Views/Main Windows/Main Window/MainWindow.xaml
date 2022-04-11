@@ -48,8 +48,8 @@
                     FontSize="14" FontFamily="Segoe UI" Foreground="White"
                     VerticalAlignment="Top" Margin="15,170,15,0" Click="SecureNotes_Click" BorderThickness="0 1 0 0" HorizontalContentAlignment="Left"/>
                 <!--Settings button-->
-                <Button Name="ButtonSettings" Background="Transparent" Content="Settings"
-                    FontSize="14" FontFamily="Segoe UI" Foreground="White" Margin="15,555,15,15" Click="Settings_Click" BorderThickness="0 1 0 0" HorizontalContentAlignment="Center"
+                <Button Name="ButtonChangePassword" Background="Transparent" Content="Change password"
+                    FontSize="14" FontFamily="Segoe UI" Foreground="White" Margin="15,555,15,15" Click="ButtonChangePassword_Click" BorderThickness="0 1 0 0" HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Bottom"/>
                 <Button x:Name="ButtonPasswordGenerator" Background="Transparent" Content="Password generator"
                     FontSize="14" FontFamily="Segoe UI" Foreground="White" Margin="15,515,15,55" Click="PasswordGenerator_Click" BorderThickness="0 1 0 0" HorizontalContentAlignment="Center"
