@@ -16,12 +16,6 @@ gonna be safe unless someone will know your password.
 ## Bug report
 Bug | Information | Fixed?
 --- | --- | --- |
-1 | If the folders are deleted after closing the login window, program crashes. | No
+1 | If the folders are deleted after closing the login window, program crashes. | Yes
 2 | Memory leak when pressing buttons. | No
 3 | After pressing delete button the listbox does not refresh | No
-## TO-DO list 
- - [ ] View windows
-    - [x] When double clicking a textbox, information gets copied to a clipboard
-    - [x] In some view windows content can be edited
-    - [ ] Add edit button
-  
